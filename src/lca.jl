@@ -85,6 +85,8 @@ of the pool; otherwise the assignment stops at the previous rank. Ties for
 the most frequent taxon stop the assignment.
 
 With `min_agreement = 100` (default) this is the strict LCA of the pool.
+The default `top_delta = Inf` keeps every hit above the rank threshold, the
+conservative choice; a finite value restricts the pool to the closest hits.
 `thresholds` may list only some ranks: the others keep
 [`DEFAULT_THRESHOLDS`](@ref). A rank without a default threshold must be
 given one.

@@ -52,6 +52,13 @@ For each sequence and each rank, from phylum to species:
   `min_agreement` percent of the pool (default **100**, strict LCA);
 - otherwise, or on a tie for the most frequent taxon, the assignment stops.
 
+`top_delta = Inf` is a deliberate default: every hit above the rank
+threshold takes part, so a congener at 97.5 % keeps the species open even
+when the best hit is at 100 %. This is the conservative choice; a finite
+value (e.g. `top_delta = 1`) lets the closest hits decide, closer to
+top-hit methods such as BOLDigger3. Neither setting handles misidentified
+records close to the best hit: use `min_agreement` below 100 for those.
+
 Only hits **identified at a rank** vote at that rank. A hit whose name is
 missing or not valid (`is_valid_name`) leaves the pool at that rank and at the
 deeper ones. At species level this removes open nomenclature and records
