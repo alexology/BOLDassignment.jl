@@ -4,6 +4,10 @@ Taxonomic assignment of amplicon sequence variants (ASVs) against the
 [BOLD v5 identification engine](https://id.boldsystems.org), with a lowest
 common ancestor (LCA) that accepts a minimum agreement percentage.
 
+This package is part of an experimental effort to use AI to port
+bioinformatics and quantitative ecology packages to Julia, with the goal of
+creating a unified environment for high performance scientific computing.
+
 The package uses the documented Barcode ID API
 (`https://id.boldsystems.org/openapi.json`):
 
@@ -13,6 +17,16 @@ The package uses the documented Barcode ID API
 
 Record metadata (BCDM fields) come from the portal API
 (`https://portal.boldsystems.org/openapi.json`).
+
+## Install from GitHub
+
+This package is not registered in the Julia General registry. Install it
+from GitHub:
+
+```julia
+using Pkg
+Pkg.add(url="https://github.com/alexology/BOLDassignment.jl")
+```
 
 ## Usage
 
