@@ -102,14 +102,20 @@ with increasing waits. All settings are keywords of `IDEngine`.
 
 The spacing is shared by every engine with the default `throttle`, so
 consecutive or concurrent calls respect the limits together. A submission that
-does not finish within `timeout` is resubmitted at most `max_resubmits` times.
+does not finish within `timeout` is resubmitted at most `max_resubmits` times;
+the error then names the last submission. If a finished submission lacks the
+result of some sequences, they are reported with a warning and returned
+without hits.
 
-With `checkpoint = dir`, the raw response of every chunk is stored in `dir`
-(file name = SHA-256 of database, mode and sequences) and reused on later
-calls, so an interrupted run resumes without resubmitting finished chunks.
-Sequences are sorted before chunking, so the input order does not matter.
-Files are written to a unique temporary name and renamed; a checkpoint that
-cannot be read back is reported and its chunk submitted again.
+With `checkpoint = dir`, the raw result of every sequence is stored in `dir`
+(one file per sequence; file name = SHA-256 of database, mode and sequence)
+and reused on later calls: an interrupted run resumes without resubmitting
+finished sequences, and adding sequences submits only the new ones.
+Sequences missing from BOLD results are not stored, so they are submitted
+again. Files are written to a unique temporary name and renamed; a
+checkpoint that cannot be read back is reported and its sequence submitted
+again. Checkpoints written by versions before 2026-10-25 (one file per
+chunk) are not reused.
 
 ## Input checks
 
@@ -131,3 +137,8 @@ julia --project=. test/runtests.jl
 
 The suite uses a simulated engine and makes no network request. Set
 `BOLDASSIGNMENT_LIVE=1` to add a test against the real BOLD services.
+
+## License
+
+MIT (see `LICENSE`). BOLD data retrieved with this package are subject to
+the terms of use of the BOLD Systems.

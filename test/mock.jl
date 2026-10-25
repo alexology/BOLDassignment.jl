@@ -9,9 +9,10 @@ mutable struct FakeEngine
     log::Vector{Tuple{Float64,String,String}}
     clock::Float64
     fail_next::Vector{Int}
+    omit::Vector{String}   # sequences left out of the results
 end
 FakeEngine(catalog; polls_before_done = 1) =
-    FakeEngine(catalog, Dict(), polls_before_done, Dict(), [], 0.0, Int[])
+    FakeEngine(catalog, Dict(), polls_before_done, Dict(), [], 0.0, Int[], String[])
 
 function fake_engine(fake::FakeEngine; kwargs...)
     IDEngine(; base_url = "https://id.test", request = (m, u, p) -> fake_request(fake, m, u, p),
@@ -46,6 +47,7 @@ function fake_request(fake::FakeEngine, method, url, payload)
     end
     io = IOBuffer()
     for (id, seq) in fake.submissions[sub_id]
+        seq in fake.omit && continue
         results = Dict{String,Any}()
         for (pid, bin, pdist, tax) in get(fake.catalog, seq, [])
             results["$pid|COI-5P|$bin|123456|public|0"] =

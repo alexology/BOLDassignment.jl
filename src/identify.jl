@@ -1,12 +1,12 @@
 mutable struct _Chunk
+    index::Vector{Int}   # positions in the sorted unique sequences
     seqs::Vector{String}
-    file::Union{Nothing,String}
     sub_id::Union{Nothing,String}
     submitted_at::Float64
     checked_at::Float64
     submissions::Int
 end
-_Chunk(seqs, file) = _Chunk(seqs, file, nothing, -Inf, -Inf, 0)
+_Chunk(index, seqs) = _Chunk(index, seqs, nothing, -Inf, -Inf, 0)
 
 """
     bold_identify(sequences; db = :animal_public, mode = :rapid, engine = IDEngine(),
@@ -17,13 +17,17 @@ as a long table.
 
 Sequences are normalized with [`normalize_sequence`](@ref), submitted once
 each and grouped in chunks of at most `chunk_size` (default: the maximum
-documented for `mode`, see [`BOLD_MODES`](@ref)) after sorting, so chunks do
-not depend on the input order. `db` is a key of [`BOLD_DATABASES`](@ref) or
-an API code. With `checkpoint` set to a directory, the raw response of each
-chunk is saved there and reused by later calls with the same sequences,
-database and mode, so an interrupted run resumes where it stopped. A
-checkpoint file that cannot be read back is reported and its chunk submitted
-again.
+documented for `mode`, see [`BOLD_MODES`](@ref)) after sorting. With
+`checkpoint` set to a directory, the raw result of each sequence is saved
+there (one file per sequence, database and mode) and reused by later calls,
+so an interrupted run resumes where it stopped and adding sequences submits
+only the new ones. A checkpoint file that cannot be read back is reported
+and its sequence submitted again. `db` is a key of [`BOLD_DATABASES`](@ref)
+or an API code.
+
+If a finished submission lacks the result of some sequences, they are
+reported with a warning, returned without hits and not saved in the
+checkpoint, so a later call submits them again.
 
 Columns: `sequence` (normalized), `process_id`, `bin_uri`, `record_status`,
 `similarity` (percent, `100 - pdist`) and one column per rank in
@@ -45,55 +49,56 @@ function bold_identify(sequences::AbstractVector; db = :animal_public, mode::Sym
         mkpath(checkpoint)
     end
 
-    chunks = [_Chunk(unique_seqs[r], nothing) for r in Iterators.partition(eachindex(unique_seqs), size)]
-    tables = Vector{Union{Nothing,DataFrame}}(nothing, length(chunks))
+    lines = Vector{Union{Nothing,String}}(nothing, length(unique_seqs))
+    files = checkpoint === nothing ? nothing :
+            [joinpath(checkpoint, _sequence_key(code, params, s) * ".jsonl") for s in unique_seqs]
     pending = Int[]
-    for (i, c) in enumerate(chunks)
-        if checkpoint !== nothing
-            c.file = joinpath(checkpoint, _chunk_key(code, params, c.seqs) * ".jsonl")
-            if isfile(c.file)
-                tables[i] = try
-                    _hits_table(c.seqs, read(c.file))
-                catch err
-                    err isa InterruptException && rethrow()
-                    @warn "Unreadable checkpoint $(c.file); submitting its chunk again" exception = err
-                    nothing
-                end
-                tables[i] === nothing || continue
+    for (i, s) in enumerate(unique_seqs)
+        if files !== nothing && isfile(files[i])
+            line = try
+                l = read(files[i], String)
+                _hits_table([s], [l])  # validates the saved result
+                l
+            catch err
+                err isa InterruptException && rethrow()
+                @warn "Unreadable checkpoint $(files[i]); submitting its sequence again" exception = err
+                nothing
             end
+            line === nothing || (lines[i] = line; continue)
         end
         push!(pending, i)
     end
-    reused = length(chunks) - length(pending)
-    reused > 0 && _log(engine, "Reusing $reused checkpointed chunk(s)")
+    reused = length(unique_seqs) - length(pending)
+    reused > 0 && _log(engine, "Reusing $reused checkpointed sequence(s)")
 
-    _run_chunks!(tables, chunks, pending, engine, code, params)
-
-    isempty(tables) && return _hits_table(String[], UInt8[])
-    return reduce(vcat, tables)
+    chunks = [_Chunk(pending[r], unique_seqs[pending[r]]) for r in Iterators.partition(eachindex(pending), size)]
+    _run_chunks!(lines, files, chunks, engine, code, params, checkpoint)
+    return _hits_table(unique_seqs, lines)
 end
 
-function _chunk_key(code, params, seqs)
+function _sequence_key(code, params, seq)
     ctx = SHA.SHA256_CTX()
     SHA.update!(ctx, codeunits(string(code, '|', params.mi, '|', params.mo, '|', params.maxh, '\n')))
-    for s in seqs
-        SHA.update!(ctx, codeunits(s))
-        SHA.update!(ctx, UInt8['\n'])
-    end
+    SHA.update!(ctx, codeunits(seq))
     return bytes2hex(SHA.digest!(ctx))
 end
 
-function _run_chunks!(tables, chunks, pending, engine, code, params)
+function _run_chunks!(lines, files, chunks, engine, code, params, checkpoint)
     active = Int[]
-    queue = copy(pending)
-    total = length(pending)
+    queue = collect(eachindex(chunks))
+    total = length(chunks)
     done = 0
     while !isempty(queue) || !isempty(active)
         if !isempty(queue) && length(active) < engine.max_active
             i = popfirst!(queue)
             c = chunks[i]
-            c.submissions > engine.max_resubmits &&
-                throw(ErrorException("chunk $i was submitted $(c.submissions) times without results"))
+            if c.submissions > engine.max_resubmits
+                msg = "chunk $i ($(length(c.seqs)) sequences) was submitted $(c.submissions) times " *
+                      "without usable results; last submission $(c.sub_id)."
+                checkpoint === nothing ||
+                    (msg *= " Finished sequences are saved in $checkpoint; call again to resume.")
+                throw(ErrorException(msg))
+            end
             ids = string.(eachindex(c.seqs))
             c.sub_id = _submit(engine, code, params, _fasta_bytes(c.seqs, ids))
             c.submissions += 1
@@ -111,9 +116,10 @@ function _run_chunks!(tables, chunks, pending, engine, code, params)
             result = _poll(engine, c)
             c.checked_at = engine.time()
             if result !== nothing
-                body, table = result
-                c.file === nothing || _save_atomic(c.file, body)
-                tables[i] = table
+                for (k, line) in zip(c.index, result)
+                    lines[k] = line
+                    line === nothing || files === nothing || _save_atomic(files[k], line)
+                end
                 filter!(!=(i), active)
                 done += 1
                 _log(engine, "Chunk $i finished ($done/$total)")
@@ -124,28 +130,34 @@ function _run_chunks!(tables, chunks, pending, engine, code, params)
             end
         end
     end
-    return tables
+    return lines
 end
 
-# `(body, table)` once the submission is complete and its results parse with
-# every sequence present; `nothing` otherwise.
+# Result line of each sequence of the chunk (`nothing` for sequences missing
+# from a finished submission) once the results are complete and valid;
+# `nothing` while they are not available yet.
 function _poll(engine, c::_Chunk)
     _finished(engine, c.sub_id) || return nothing
     body = _results(engine, c.sub_id)
     body === nothing && return nothing
-    table = try
-        _hits_table(c.seqs, body)
+    lines = try
+        l = _result_lines(c.seqs, body; allow_missing = true)
+        _hits_table(c.seqs, l)  # validates every hit before anything is saved
+        l
     catch err
         err isa InterruptException && rethrow()
         _log(engine, "Results of $(c.sub_id) not usable yet: $(sprint(showerror, err))")
         return nothing
     end
-    return body, table
+    n = count(isnothing, lines)
+    n > 0 && @warn "BOLD submission $(c.sub_id) finished without the result of $n sequence(s); " *
+                   "they are reported without hits and not checkpointed"
+    return lines
 end
 
 # Write to a unique temporary file in the same directory, then rename over
 # the destination; the temporary file is removed on failure.
-function _save_atomic(file::AbstractString, body::Vector{UInt8})
+function _save_atomic(file::AbstractString, body)
     tmp = tempname(dirname(file); cleanup = false) * ".partial"
     try
         write(tmp, body)
@@ -167,8 +179,29 @@ function _similarity(rec, key)
     return 100.0 - Float64(pdist)
 end
 
-# Hit table of one chunk from the JSON Lines body; seqids are positions in `seqs`.
-function _hits_table(seqs::AbstractVector{String}, body::Vector{UInt8})
+# Splits a JSON Lines body into the line of each sequence; seqids are positions
+# in `seqs`. Missing sequences are an error unless `allow_missing`.
+function _result_lines(seqs::AbstractVector{String}, body::Vector{UInt8}; allow_missing::Bool = false)
+    lines = Vector{Union{Nothing,String}}(nothing, length(seqs))
+    for line in eachline(IOBuffer(body))
+        isempty(strip(line)) && continue
+        obj = JSON3.read(line)
+        k = tryparse(Int, string(get(obj, :seqid, "")))
+        (k !== nothing && 1 <= k <= length(seqs)) ||
+            throw(ErrorException("unexpected seqid $(repr(get(obj, :seqid, nothing))) in BOLD results"))
+        lines[k] === nothing || throw(ErrorException("seqid $k repeated in BOLD results"))
+        lines[k] = line
+    end
+    n = count(isnothing, lines)
+    n > 0 && !allow_missing && throw(ErrorException("BOLD results miss $n sequence(s)"))
+    return lines
+end
+
+_hits_table(seqs::AbstractVector{String}, body::Vector{UInt8}) = _hits_table(seqs, _result_lines(seqs, body))
+
+# Hit table from the result line of each sequence (`nothing`: no hits). The
+# seqid inside a line is not used here.
+function _hits_table(seqs::AbstractVector{String}, lines::AbstractVector)
     cols = (sequence = String[], process_id = Union{Missing,String}[],
             bin_uri = Union{Missing,String}[], record_status = Union{Missing,String}[],
             similarity = Union{Missing,Float64}[])
@@ -180,32 +213,23 @@ function _hits_table(seqs::AbstractVector{String}, body::Vector{UInt8})
             push!(taxa[r], tax isa JSON3.Object ? _text(get(tax, r, nothing)) : missing)
         end
     end
-    seen = falses(length(seqs))
-    for line in eachline(IOBuffer(body))
-        isempty(strip(line)) && continue
-        obj = JSON3.read(line)
-        k = tryparse(Int, string(get(obj, :seqid, "")))
-        (k !== nothing && 1 <= k <= length(seqs)) ||
-            throw(ErrorException("unexpected seqid $(repr(get(obj, :seqid, nothing))) in BOLD results"))
-        seen[k] && throw(ErrorException("seqid $k repeated in BOLD results"))
-        seen[k] = true
-        results = get(obj, :results, nothing)
+    for (k, line) in enumerate(lines)
+        results = line === nothing ? nothing : get(JSON3.read(line), :results, nothing)
         if results === nothing || isempty(results)
             push_row!(seqs[k], missing, missing, missing, missing, nothing)
             continue
         end
-        results isa JSON3.Object || throw(ErrorException("unexpected results for seqid $k"))
+        results isa JSON3.Object || throw(ErrorException("unexpected results for sequence $k"))
         for (key, rec) in pairs(results)
             fields = split(string(key), '|')
             pid = _text(fields[1])
-            pid === missing && throw(ErrorException("hit without process ID for seqid $k"))
+            pid === missing && throw(ErrorException("hit without process ID for sequence $k"))
             push_row!(seqs[k], pid,
                       length(fields) >= 3 ? _text(fields[3]) : missing,
                       length(fields) >= 5 ? _text(fields[5]) : missing,
                       _similarity(rec, key), get(rec, :taxonomy, nothing))
         end
     end
-    all(seen) || throw(ErrorException("BOLD results miss $(count(!, seen)) sequence(s)"))
     df = DataFrame(cols)
     for r in RANKS
         df[!, r] = taxa[r]

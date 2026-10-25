@@ -39,7 +39,8 @@ function bold_records(process_ids::AbstractVector; fields = nothing, engine::IDE
     columns = fields === nothing ? _union_keys(records) : Symbol.(collect(fields))
     df = DataFrame()
     for c in columns
-        df[!, c] = [get(r, c, missing) for r in records]
+        # Narrowest element type (e.g. Union{Missing,String}) instead of Any.
+        df[!, c] = identity.([get(r, c, missing) for r in records])
     end
     return df
 end
@@ -49,16 +50,16 @@ function _portal_batches(ids)
     current = String[]
     len = 0
     for p in ids
-        add = length("ids:processid:") + length(p) + (isempty(current) ? 0 : 1)
-        add > _PORTAL_QUERY_MAX && throw(ArgumentError("process ID too long: $p"))
-        if len + add > _PORTAL_QUERY_MAX
+        term = length("ids:processid:") + length(p)
+        term > _PORTAL_QUERY_MAX && throw(ArgumentError("process ID too long: $p"))
+        # One more character for the ';' separator when the batch is not empty.
+        if !isempty(current) && len + 1 + term > _PORTAL_QUERY_MAX
             push!(batches, current)
             current = String[]
-            add -= 1
             len = 0
         end
+        len += term + (isempty(current) ? 0 : 1)
         push!(current, p)
-        len += add
     end
     isempty(current) || push!(batches, current)
     return batches

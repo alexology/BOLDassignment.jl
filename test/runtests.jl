@@ -156,14 +156,24 @@ catalog() = Dict{String,Vector{Any}}(
         fake.fail_next = [503, 429]
         dir = mktempdir()
         hits = bold_identify([S1, S2, S4]; chunk_size = 2, checkpoint = dir, engine = fake_engine(fake))
-        @test length(readdir(dir)) == 2
+        @test length(readdir(dir)) == 3
         @test all(endswith(".jsonl"), readdir(dir))
         n_requests = length(fake.log)
-        # Chunks do not depend on the input order: everything is reused.
+        # The checkpoint does not depend on the input order: everything is reused.
         same = bold_identify([S4, lowercase(S1), S2, S4]; chunk_size = 2, checkpoint = dir,
                              engine = fake_engine(fake))
         @test length(fake.log) == n_requests
         @test isequal(same, hits)
+        # Adding a sequence submits only that sequence; the others are reused.
+        n_subs = length(fake.submissions)
+        more = bold_identify([S1, S3, S2, S4]; chunk_size = 2, checkpoint = dir, engine = fake_engine(fake))
+        @test length(fake.submissions) == n_subs + 1
+        @test fake.submissions["sub$(n_subs + 1)"] == ["1" => S3]
+        @test isequal(more[more.sequence .!= S3, :], hits)
+        @test length(readdir(dir)) == 4
+        key = BOLDassignment._sequence_key(BOLDassignment._database_code(:animal_public),
+                                           BOLDassignment._mode(:rapid), S3)
+        rm(joinpath(dir, key * ".jsonl"))
         # A corrupted checkpoint is reported, resubmitted and rewritten.
         files = sort(readdir(dir; join = true))
         write(files[1], "{\"seqid\":\"1\",\"res")
@@ -185,6 +195,29 @@ catalog() = Dict{String,Vector{Any}}(
         @test_throws ErrorException bold_identify([S1]; engine = fake_engine(stuck; timeout = 100.0,
                                                                             max_resubmits = 2))
         @test length(stuck.submissions) == 3
+        err = try
+            bold_identify([S1]; checkpoint = mktempdir(),
+                          engine = fake_engine(stuck; timeout = 100.0, max_resubmits = 0))
+        catch e
+            e
+        end
+        @test err isa ErrorException
+        @test occursin("last submission sub4", err.msg) && occursin("call again to resume", err.msg)
+        # A finished submission without the line of a sequence: reported once,
+        # returned without hits and not checkpointed, so it is submitted again.
+        partial = FakeEngine(catalog())
+        partial.omit = [S2]
+        pdir = mktempdir()
+        got = @test_logs (:warn, r"without the result of 1 sequence") match_mode = :any bold_identify(
+            [S1, S2]; checkpoint = pdir, engine = fake_engine(partial))
+        @test length(partial.submissions) == 1
+        @test ismissing(only(got[got.sequence .== S2, :process_id]))
+        @test count(==(S1), got.sequence) == 3
+        @test length(readdir(pdir)) == 1
+        empty!(partial.omit)
+        again = bold_identify([S1, S2]; checkpoint = pdir, engine = fake_engine(partial))
+        @test partial.submissions["sub2"] == ["1" => S2]
+        @test only(again[again.sequence .== S2, :process_id]) == "P4"
         # The spacing is shared by calls using the same throttle.
         fake = FakeEngine(catalog())
         shared = BOLDassignment._Throttle()
@@ -310,6 +343,10 @@ catalog() = Dict{String,Vector{Any}}(
         @test reduce(vcat, batches) == ids
         @test all(b -> length(join(("ids:processid:" * p for p in b), ';')) <= 250, batches)
         @test length(batches) > 1
+        # An ID that fits alone is accepted after another one (236 + 14 = 250).
+        long = "L" ^ 236
+        @test BOLDassignment._portal_batches(["P1", long]) == [["P1"], [long]]
+        @test_throws ArgumentError BOLDassignment._portal_batches(["L" ^ 237])
     end
 
     @testset "Portal records with a fake portal" begin
@@ -338,6 +375,8 @@ catalog() = Dict{String,Vector{Any}}(
                             base_url = "https://portal.test")
         @test recs.processid == ["P1", "P2"]
         @test isequal(recs.species, ["Sp 1", missing])
+        @test eltype(recs.processid) == String
+        @test eltype(recs.species) == Union{Missing,String}
         @test recs.coord == fill("[41.988,-120.036]", 2)
         @test all(startswith("https://portal.test/api/"), urls)
         # Many process IDs are split in several queries (250-character limit).
