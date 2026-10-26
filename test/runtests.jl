@@ -6,6 +6,7 @@ using JSON3
 using Test
 
 include("mock.jl")
+include("atomic_publication.jl")
 
 const S1 = "ACGTACGTAAACCCGGGTTT"
 const S2 = "TTTTGGGGCCCCAAAATTGA"

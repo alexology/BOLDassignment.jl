@@ -161,7 +161,9 @@ function _save_atomic(file::AbstractString, body)
     tmp = tempname(dirname(file); cleanup = false) * ".partial"
     try
         write(tmp, body)
-        Base.Filesystem.rename(tmp, file)
+        # A single filesystem operation, also on Julia 1.10 (no cp/rm fallback).
+        err = ccall(:jl_fs_rename, Int32, (Cstring, Cstring), tmp, file)
+        err < 0 && Base.uv_error("rename($(repr(tmp)), $(repr(file)))", err)
     catch
         rm(tmp; force = true)
         rethrow()
