@@ -12,9 +12,15 @@ portal API, e.g. to add collection data to the hits of
 nested values (such as `coord`) are returned as JSON text. Unknown or private
 process IDs are absent from the result. Requests use the spacing, retries and
 transport of `engine`.
+
+The portal returns **one document per marker** of a specimen (`record_id`
+`<processid>.<marker_code>`, e.g. `COI-3P` and `COI-5P`), each with its own
+sequence `nuc`. With `marker = "COI-5P"` only the documents of that marker are
+kept (case-insensitive); otherwise a process ID may appear in several rows.
 """
 function bold_records(process_ids::AbstractVector; fields = nothing, engine::IDEngine = IDEngine(),
-                      base_url::AbstractString = _PORTAL_URL)
+                      base_url::AbstractString = _PORTAL_URL,
+                      marker::Union{Nothing,AbstractString} = nothing)
     ids = unique!(String[strip(string(p)) for p in process_ids if !ismissing(p)])
     filter!(!isempty, ids)
     records = Dict{Symbol,Any}[]
@@ -30,7 +36,12 @@ function bold_records(process_ids::AbstractVector; fields = nothing, engine::IDE
                                    "?length=100&start=", start))
             data = JSON3.read(body)[:data]
             for rec in data
-                push!(records, Dict{Symbol,Any}(k => _portal_value(v) for (k, v) in pairs(rec)))
+                r = Dict{Symbol,Any}(k => _portal_value(v) for (k, v) in pairs(rec))
+                if marker !== nothing
+                    m = get(r, :marker_code, missing)
+                    (m isa AbstractString && lowercase(strip(m)) == lowercase(strip(marker))) || continue
+                end
+                push!(records, r)
             end
             length(data) < 100 && break
             start += 100

@@ -309,6 +309,15 @@ catalog() = Dict{String,Vector{Any}}(
         @test real.similarity[real.process_id .== "TDAOE1457-22"] ≈ [100 - 0.3184713375796178]
         @test count(ismissing, real.species) == 4
         @test all(isequal("Onthophagus"), real.genus)
+        # Alignment fields kept from the raw hits.
+        @test all(==("COI-5P"), real.marker) && !any(ismissing, real.taxid)
+        @test real.taxid[real.process_id .== "UTOCP034-25"] == ["153867"]
+        @test real.query_coverage[real.process_id .== "GBCL3727-08"] == [91.0]
+        @test real.align_length[real.process_id .== "UTOCP034-25"] == [314]
+        @test real.query_coverage[real.process_id .== "UTOCP034-25"] == [100.0]
+        @test all(x -> 0 < x <= 100, real.query_coverage)
+        @test all(ismissing, hits.marker[ismissing.(hits.similarity)])
+        @test eltype(hits.align_length) == Union{Missing,Int}
         # Strict LCA: one O. illyricus record at 99.68 % keeps the species open.
         strict = lca_assign(hits)
         @test isequal(strict.assigned_rank, ["genus", missing])
@@ -386,6 +395,25 @@ catalog() = Dict{String,Vector{Any}}(
         @test many.processid == ["P$i" for i in 1:250]
         @test propertynames(many) == [:processid]
         @test isempty(bold_records(String[]; engine))
+        # One document per marker: the `marker` keyword keeps only the chosen one.
+        db["P1"]["marker_code"] = "COI-5P"
+        db["P2"]["marker_code"] = "COI-3P"
+        coi5 = bold_records(["P1", "P2", "P3"]; engine, base_url = "https://portal.test",
+                            marker = "coi-5p")
+        @test coi5.processid == ["P1"]
+        @test nrow(bold_records(["P1", "P2"]; engine, base_url = "https://portal.test")) == 2
+    end
+
+    @testset "Query coverage fallbacks" begin
+        rec(s) = JSON3.read(s)
+        @test BOLDassignment._query_coverage(rec("{\"qcovhsp\": 87}"), 300) == 87.0
+        @test BOLDassignment._query_coverage(rec("{\"qstart\": 1, \"qend\": 150}"), 300) == 50.0
+        @test BOLDassignment._query_coverage(rec("{\"qstart\": 300, \"qend\": 1}"), 300) == 100.0
+        @test ismissing(BOLDassignment._query_coverage(rec("{\"qcovhsp\": 120}"), 300))
+        @test ismissing(BOLDassignment._query_coverage(rec("{}"), 300))
+        @test BOLDassignment._align_length(rec("{\"length\": 314}")) == 314
+        @test ismissing(BOLDassignment._align_length(rec("{\"length\": 0}")))
+        @test ismissing(BOLDassignment._align_length(rec("{\"length\": \"x\"}")))
     end
 
     if get(ENV, "BOLDASSIGNMENT_LIVE", "") == "1"

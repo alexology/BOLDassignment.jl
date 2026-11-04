@@ -48,6 +48,15 @@ meta = bold_records(skipmissing(majority.best_process_id) |> collect;
                     fields = [:processid, :bin_uri, Symbol("country/ocean"), :coord])
 ```
 
+The hit table of `bold_identify` has `sequence`, `process_id`, `bin_uri`,
+`record_status`, `similarity` (`100 - pdist`), `marker` (e.g. `COI-5P`),
+`taxid`, `align_length` (`length` of the alignment), `query_coverage`
+(`qcovhsp`, or computed from `qstart`/`qend`) and one column per rank.
+
+The portal returns one record per specimen **and marker** (`record_id`
+`<processid>.<marker>`, each with its own sequence `nuc`): use
+`bold_records(ids; marker = "COI-5P")` to keep only the records of one marker.
+
 `bold_assign` keeps every row of the input, in order, and appends `n_hits`,
 `best_similarity`, `best_process_id`, `assigned_rank`, `taxon`, one column per
 rank (`phylum` … `species`) and one `<rank>_agreement` column per rank. Use

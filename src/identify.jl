@@ -30,8 +30,10 @@ reported with a warning, returned without hits and not saved in the
 checkpoint, so a later call submits them again.
 
 Columns: `sequence` (normalized), `process_id`, `bin_uri`, `record_status`,
-`similarity` (percent, `100 - pdist`) and one column per rank in
-[`RANKS`](@ref). A sequence without hits has one row with `missing` hit
+`similarity` (percent, `100 - pdist`), `marker` (e.g. `COI-5P`), `taxid`
+(BOLD taxonomy ID), `align_length` (`length` of the alignment) and
+`query_coverage` (percent of the query covered by the hit: `qcovhsp`, or
+computed from `qstart`/`qend`), and one column per rank in [`RANKS`](@ref). A sequence without hits has one row with `missing` hit
 fields. Rows follow the sorted order of the sequences.
 """
 function bold_identify(sequences::AbstractVector; db = :animal_public, mode::Symbol = :rapid,
@@ -181,6 +183,27 @@ function _similarity(rec, key)
     return 100.0 - Float64(pdist)
 end
 
+_integer(x) = x isa Integer ? Int(x) : x isa Real && isfinite(x) && isinteger(x) ? Int(x) : missing
+
+# Alignment length of a hit (`length` field), `missing` when absent.
+function _align_length(rec)
+    rec isa JSON3.Object || return missing
+    n = _integer(get(rec, :length, nothing))
+    return n !== missing && n > 0 ? n : missing
+end
+
+# Percent of the query covered by the hit: the engine's `qcovhsp` when given,
+# otherwise computed from `qstart`/`qend`; `missing` when neither is usable.
+function _query_coverage(rec, query_length::Integer)
+    rec isa JSON3.Object || return missing
+    cov = get(rec, :qcovhsp, nothing)
+    cov isa Real && isfinite(cov) && 0 <= cov <= 100 && return Float64(cov)
+    qs, qe = _integer(get(rec, :qstart, nothing)), _integer(get(rec, :qend, nothing))
+    (qs === missing || qe === missing || query_length == 0) && return missing
+    span = abs(qe - qs) + 1
+    return min(100.0, 100.0 * span / query_length)
+end
+
 # Splits a JSON Lines body into the line of each sequence; seqids are positions
 # in `seqs`. Missing sequences are an error unless `allow_missing`.
 function _result_lines(seqs::AbstractVector{String}, body::Vector{UInt8}; allow_missing::Bool = false)
@@ -206,19 +229,25 @@ _hits_table(seqs::AbstractVector{String}, body::Vector{UInt8}) = _hits_table(seq
 function _hits_table(seqs::AbstractVector{String}, lines::AbstractVector)
     cols = (sequence = String[], process_id = Union{Missing,String}[],
             bin_uri = Union{Missing,String}[], record_status = Union{Missing,String}[],
-            similarity = Union{Missing,Float64}[])
+            similarity = Union{Missing,Float64}[], marker = Union{Missing,String}[],
+            taxid = Union{Missing,String}[], align_length = Union{Missing,Int}[],
+            query_coverage = Union{Missing,Float64}[])
     taxa = Dict(r => Union{Missing,String}[] for r in RANKS)
-    function push_row!(seq, pid, bin, status, sim, tax)
+    function push_row!(seq, pid, bin, status, sim, marker, taxid, len, cov, tax)
         push!(cols.sequence, seq); push!(cols.process_id, pid); push!(cols.bin_uri, bin)
         push!(cols.record_status, status); push!(cols.similarity, sim)
+        push!(cols.marker, marker); push!(cols.taxid, taxid)
+        push!(cols.align_length, len); push!(cols.query_coverage, cov)
         for r in RANKS
             push!(taxa[r], tax isa JSON3.Object ? _text(get(tax, r, nothing)) : missing)
         end
     end
+    field(fields, i) = length(fields) >= i ? _text(fields[i]) : missing
     for (k, line) in enumerate(lines)
         results = line === nothing ? nothing : get(JSON3.read(line), :results, nothing)
         if results === nothing || isempty(results)
-            push_row!(seqs[k], missing, missing, missing, missing, nothing)
+            push_row!(seqs[k], missing, missing, missing, missing, missing, missing, missing,
+                      missing, nothing)
             continue
         end
         results isa JSON3.Object || throw(ErrorException("unexpected results for sequence $k"))
@@ -226,10 +255,9 @@ function _hits_table(seqs::AbstractVector{String}, lines::AbstractVector)
             fields = split(string(key), '|')
             pid = _text(fields[1])
             pid === missing && throw(ErrorException("hit without process ID for sequence $k"))
-            push_row!(seqs[k], pid,
-                      length(fields) >= 3 ? _text(fields[3]) : missing,
-                      length(fields) >= 5 ? _text(fields[5]) : missing,
-                      _similarity(rec, key), get(rec, :taxonomy, nothing))
+            push_row!(seqs[k], pid, field(fields, 3), field(fields, 5), _similarity(rec, key),
+                      field(fields, 2), field(fields, 4), _align_length(rec),
+                      _query_coverage(rec, length(seqs[k])), get(rec, :taxonomy, nothing))
         end
     end
     df = DataFrame(cols)
