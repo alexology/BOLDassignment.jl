@@ -214,6 +214,8 @@ catalog() = Dict{String,Vector{Any}}(
         @test length(partial.submissions) == 1
         @test ismissing(only(got[got.sequence .== S2, :process_id]))
         @test count(==(S1), got.sequence) == 3
+        @test only(got[got.sequence .== S2, :result_received]) == false
+        @test all(got[got.sequence .== S1, :result_received])
         @test length(readdir(pdir)) == 1
         empty!(partial.omit)
         again = bold_identify([S1, S2]; checkpoint = pdir, engine = fake_engine(partial))
@@ -238,6 +240,9 @@ catalog() = Dict{String,Vector{Any}}(
                      "\"taxonomy\":{\"genus\":\"Copris\"}}}"
         line(k, results) = "{\"seqid\":\"$k\",\"results\":$results}"
         @test parse_hits([S1], line(1, hit(1.5))).similarity == [98.5]
+        # An explicit empty result is received (no match); an absent line is not.
+        @test parse_hits([S1], line(1, "{}")).result_received == [true]
+        @test BOLDassignment._hits_table([S1, S2], [line(1, "{}"), nothing]).result_received == [true, false]
         @test_throws ErrorException parse_hits([S1, S2], line(1, "{}"), line(1, "{}"))
         @test_throws ErrorException parse_hits([S1, S2], line(1, "{}"))
         @test_throws ErrorException parse_hits([S1], line(3, "{}"))

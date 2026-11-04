@@ -51,7 +51,10 @@ meta = bold_records(skipmissing(majority.best_process_id) |> collect;
 The hit table of `bold_identify` has `sequence`, `process_id`, `bin_uri`,
 `record_status`, `similarity` (`100 - pdist`), `marker` (e.g. `COI-5P`),
 `taxid`, `align_length` (`length` of the alignment), `query_coverage`
-(`qcovhsp`, or computed from `qstart`/`qend`) and one column per rank.
+(`qcovhsp`, or computed from `qstart`/`qend`), `result_received` and one
+column per rank. `result_received = false` marks a sequence whose result
+BOLD did not return in a finished submission: its hits are unknown (not
+"no match") and it is submitted again by a later call with a checkpoint.
 
 The portal returns one record per specimen **and marker** (`record_id`
 `<processid>.<marker>`, each with its own sequence `nuc`): use

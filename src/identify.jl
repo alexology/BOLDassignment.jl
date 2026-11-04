@@ -26,15 +26,17 @@ and its sequence submitted again. `db` is a key of [`BOLD_DATABASES`](@ref)
 or an API code.
 
 If a finished submission lacks the result of some sequences, they are
-reported with a warning, returned without hits and not saved in the
-checkpoint, so a later call submits them again.
+reported with a warning, returned without hits with `result_received =
+false` and not saved in the checkpoint, so a later call submits them again.
 
 Columns: `sequence` (normalized), `process_id`, `bin_uri`, `record_status`,
 `similarity` (percent, `100 - pdist`), `marker` (e.g. `COI-5P`), `taxid`
 (BOLD taxonomy ID), `align_length` (`length` of the alignment) and
 `query_coverage` (percent of the query covered by the hit: `qcovhsp`, or
-computed from `qstart`/`qend`), and one column per rank in [`RANKS`](@ref). A sequence without hits has one row with `missing` hit
-fields. Rows follow the sorted order of the sequences.
+computed from `qstart`/`qend`), `result_received` (`false` when BOLD did not
+return the result of the sequence: unknown, not "no match"), and one column
+per rank in [`RANKS`](@ref). A sequence without hits has one row with
+`missing` hit fields. Rows follow the sorted order of the sequences.
 """
 function bold_identify(sequences::AbstractVector; db = :animal_public, mode::Symbol = :rapid,
                        engine::IDEngine = IDEngine(), chunk_size::Union{Nothing,Integer} = nothing,
@@ -231,13 +233,14 @@ function _hits_table(seqs::AbstractVector{String}, lines::AbstractVector)
             bin_uri = Union{Missing,String}[], record_status = Union{Missing,String}[],
             similarity = Union{Missing,Float64}[], marker = Union{Missing,String}[],
             taxid = Union{Missing,String}[], align_length = Union{Missing,Int}[],
-            query_coverage = Union{Missing,Float64}[])
+            query_coverage = Union{Missing,Float64}[], result_received = Bool[])
     taxa = Dict(r => Union{Missing,String}[] for r in RANKS)
-    function push_row!(seq, pid, bin, status, sim, marker, taxid, len, cov, tax)
+    function push_row!(seq, pid, bin, status, sim, marker, taxid, len, cov, tax; received = true)
         push!(cols.sequence, seq); push!(cols.process_id, pid); push!(cols.bin_uri, bin)
         push!(cols.record_status, status); push!(cols.similarity, sim)
         push!(cols.marker, marker); push!(cols.taxid, taxid)
         push!(cols.align_length, len); push!(cols.query_coverage, cov)
+        push!(cols.result_received, received)
         for r in RANKS
             push!(taxa[r], tax isa JSON3.Object ? _text(get(tax, r, nothing)) : missing)
         end
@@ -247,7 +250,7 @@ function _hits_table(seqs::AbstractVector{String}, lines::AbstractVector)
         results = line === nothing ? nothing : get(JSON3.read(line), :results, nothing)
         if results === nothing || isempty(results)
             push_row!(seqs[k], missing, missing, missing, missing, missing, missing, missing,
-                      missing, nothing)
+                      missing, nothing; received = line !== nothing)
             continue
         end
         results isa JSON3.Object || throw(ErrorException("unexpected results for sequence $k"))
