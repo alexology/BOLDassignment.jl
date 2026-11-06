@@ -421,6 +421,8 @@ catalog() = Dict{String,Vector{Any}}(
         @test ismissing(BOLDassignment._align_length(rec("{\"length\": \"x\"}")))
     end
 
+    include("test_bottom_up.jl")
+
     if get(ENV, "BOLDASSIGNMENT_LIVE", "") == "1"
         @testset "Live BOLD request" begin
             include("live.jl")

@@ -1,4 +1,5 @@
-const _LCA_KEYWORDS = (:min_agreement, :thresholds, :top_delta, :ignore_missing, :valid_name, :ranks)
+const _LCA_KEYWORDS = (:min_agreement, :thresholds, :top_delta, :ignore_missing, :valid_name, :ranks,
+                       :direction)
 
 """
     bold_assign(df::AbstractDataFrame; sequence_col = :ASV, hits = nothing, prefix = "",
@@ -10,7 +11,9 @@ Assign a taxonomy to the sequences in column `sequence_col` of `df`.
 Unique sequences are identified with [`bold_identify`](@ref) (or taken from a
 previously computed `hits` table, without network access) and assigned with
 [`lca_assign`](@ref); `lca_kwargs` (`min_agreement`, `thresholds`,
-`top_delta`, `ignore_missing`, `valid_name`, `ranks`) are passed to it. Every row of `df`
+`top_delta`, `ignore_missing`, `valid_name`, `ranks`, `direction`) are passed
+to it. With `direction = :bottom_up` the columns `decision_rank` and
+`lineage_conflict` are appended as well. Every row of `df`
 is kept, in order, with the assignment columns appended, their names preceded
 by `prefix`. Rows with a `missing` sequence get `missing` assignments.
 
@@ -29,13 +32,16 @@ function bold_assign(df::AbstractDataFrame; sequence_col = :ASV, hits = nothing,
         k in _LCA_KEYWORDS || throw(ArgumentError("unknown keyword $k"))
     end
     # Every argument is checked before the (possibly long) identification.
+    direction = _check_direction(get(lca_kwargs, :direction, :top_down))
     ranks = _check_ranks(get(lca_kwargs, :ranks, RANKS))
     _check_thresholds(get(lca_kwargs, :thresholds, DEFAULT_THRESHOLDS), ranks)
     _check_lca_options(get(lca_kwargs, :min_agreement, 100), get(lca_kwargs, :top_delta, Inf))
     col = Symbol(sequence_col)
     hasproperty(df, col) || throw(ArgumentError("column :$col not found"))
+    extra = direction === :bottom_up ? (:decision_rank, :lineage_conflict) : ()
     new_columns = [Symbol(prefix, n) for n in (_ASSIGNMENT_COLUMNS[2:end]..., ranks...,
-                                                (Symbol(r, :_agreement) for r in ranks)...)]
+                                                (Symbol(r, :_agreement) for r in ranks)...,
+                                                extra...)]
     for n in new_columns
         hasproperty(df, n) &&
             throw(ArgumentError("column :$n already exists; use the `prefix` keyword"))

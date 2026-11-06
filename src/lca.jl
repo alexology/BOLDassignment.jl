@@ -60,6 +60,14 @@ function _check_thresholds(thresholds, ranks)
     return limits
 end
 
+const LCA_DIRECTIONS = (:top_down, :bottom_up)
+
+function _check_direction(direction)
+    direction isa Symbol && direction in LCA_DIRECTIONS ||
+        throw(ArgumentError("direction must be :top_down or :bottom_up, got $(repr(direction))"))
+    return direction
+end
+
 function _check_lca_options(min_agreement, top_delta)
     0 < min_agreement <= 100 || throw(ArgumentError("min_agreement must be in (0, 100]"))
     (top_delta >= 0 && !isnan(top_delta)) ||
@@ -70,9 +78,12 @@ end
 """
     lca_path(similarity, lineages; min_agreement = 100, thresholds = DEFAULT_THRESHOLDS,
              top_delta = Inf, ignore_missing = true, valid_name = is_valid_name,
-             ranks = RANKS)
+             ranks = RANKS, direction = :top_down)
 
 Lowest common ancestor of the hits of one sequence with a minimum agreement.
+`direction = :top_down` (default) descends from the most general rank, as
+described first; `direction = :bottom_up` starts from the most specific rank
+and moves up (see below).
 
 `similarity` holds the percent similarity of each hit and `lineages` one
 indexable lineage per hit (`lineage[r]` for each rank `r` in `ranks`, `missing`
@@ -100,12 +111,41 @@ the species decision but still supports the genus. With
 agreement.
 
 Returns a vector of `(rank, taxon, agreement, n_support, n_pool)` named tuples,
-one per assigned rank (empty when nothing can be assigned).
+one per assigned rank from the most general to the most specific (empty when
+nothing can be assigned).
+
+# Bottom-up direction
+
+With `direction = :bottom_up` the ranks are visited from the most specific to
+the most general, and the **decision rank** is the first one whose pool
+agrees. The pool of a rank is defined as above. Only hits with a valid name at
+that rank vote; with `ignore_missing = true` the others leave the pool of that
+rank, with `ignore_missing = false` they stay in it and count against the
+agreement. Unlike the top-down direction, every rank is judged on its own: a
+hit not identified at the species still votes at the genus, and the votes at
+a rank do not depend on the other ranks. The most frequent taxon is accepted
+when it is unique and supported by at least `min_agreement` percent of the
+pool; otherwise (or with an empty pool) the next more general rank is tried.
+When no rank agrees, nothing is assigned.
+
+The ranks above the decision rank come from the **supporting hits**, the pool
+hits voting for the accepted taxon: at each higher rank the most frequent
+valid name among them is taken, even when they are not unanimous. In those
+entries `n_pool` is the number of supporting hits, `n_support` the number
+carrying the name and `agreement = 100 * n_support / n_pool`, so an agreement
+below 100 signals inconsistent BOLD classifications (e.g. one species name
+under two genera, or supporting hits without a name at that rank). On a tie,
+or when no supporting hit has a valid name, that rank and all the more general
+ones are left out of the path. The decision rank is the last entry and the
+only one to which `min_agreement` applies. Use `top_delta = Inf` (default)
+with this direction, so that every hit above the threshold of a rank takes
+part.
 """
 function lca_path(similarity::AbstractVector{<:Real}, lineages::AbstractVector;
                   min_agreement::Real = 100, thresholds = DEFAULT_THRESHOLDS,
                   top_delta::Real = Inf, ignore_missing::Bool = true,
-                  valid_name = is_valid_name, ranks = RANKS)
+                  valid_name = is_valid_name, ranks = RANKS, direction = :top_down)
+    _check_direction(direction)
     ranks = _check_ranks(ranks)
     limits = _check_thresholds(thresholds, ranks)
     _check_lca_options(min_agreement, top_delta)
@@ -115,6 +155,9 @@ function lca_path(similarity::AbstractVector{<:Real}, lineages::AbstractVector;
         (isfinite(s) && 0 <= s <= 100) ||
             throw(ArgumentError("similarity must be finite and within [0, 100], got $s"))
     end
+    direction === :bottom_up &&
+        return first(_lca_path_bottom_up(similarity, lineages, min_agreement, limits, top_delta,
+                                         ignore_missing, valid_name, ranks))
     return _lca_path(similarity, lineages, min_agreement, limits, top_delta, ignore_missing,
                      valid_name, ranks)
 end
@@ -166,10 +209,88 @@ function _lca_path(similarity, lineages, min_agreement, limits, top_delta, ignor
     return path
 end
 
+const _PathEntry = NamedTuple{(:rank, :taxon, :agreement, :n_support, :n_pool),
+                              Tuple{Symbol,String,Float64,Int,Int}}
+
+# Bottom-up rule of `lca_path`. Returns the path and whether the supporting
+# hits disagree (or lack a valid name) at a rank above the decision rank.
+function _lca_path_bottom_up(similarity, lineages, min_agreement, limits, top_delta,
+                             ignore_missing, valid_name, ranks)
+    path = _PathEntry[]
+    isempty(similarity) && return path, false
+    floor_sim = maximum(similarity) - top_delta
+    counts = Dict{String,Int}()
+    voters = Int[]
+    for j in reverse(eachindex(ranks))
+        r = ranks[j]
+        t = limits[r]
+        empty!(counts)
+        empty!(voters)
+        n_pool = 0
+        for i in eachindex(similarity)
+            s = similarity[i]
+            (s >= t && s >= floor_sim) || continue
+            name = lineages[i][r]
+            if valid_name(r, name)
+                n_pool += 1
+                push!(voters, i)
+                counts[name] = get(counts, name, 0) + 1
+            elseif !ignore_missing
+                n_pool += 1
+            end
+        end
+        (n_pool == 0 || isempty(counts)) && continue
+        best = maximum(values(counts))
+        count(==(best), values(counts)) == 1 || continue
+        taxon = first(k for (k, v) in counts if v == best)
+        agreement = 100 * best / n_pool
+        # Same relative tolerance as the top-down rule.
+        agreement >= min_agreement * (1 - 1e-12) || continue
+        supporting = [i for i in voters if lineages[i][r] == taxon]
+        above, conflict = _ranks_above(lineages, supporting, ranks, j, valid_name)
+        append!(path, above)
+        push!(path, (rank = r, taxon = taxon, agreement = agreement, n_support = best,
+                     n_pool = n_pool))
+        return path, conflict
+    end
+    return path, false
+end
+
+# Names of the ranks above `ranks[j]` taken from the supporting hits, most
+# general first. Stops at the first tie or rank without any valid name.
+function _ranks_above(lineages, supporting, ranks, j, valid_name)
+    entries = _PathEntry[]
+    conflict = false
+    n = length(supporting)
+    counts = Dict{String,Int}()
+    for q in j-1:-1:1
+        r = ranks[q]
+        empty!(counts)
+        for i in supporting
+            name = lineages[i][r]
+            valid_name(r, name) && (counts[name] = get(counts, name, 0) + 1)
+        end
+        if isempty(counts)
+            conflict = true
+            break
+        end
+        best = maximum(values(counts))
+        if count(==(best), values(counts)) != 1
+            conflict = true
+            break
+        end
+        best == n || (conflict = true)
+        taxon = first(k for (k, v) in counts if v == best)
+        pushfirst!(entries, (rank = r, taxon = taxon, agreement = 100 * best / n,
+                             n_support = best, n_pool = n))
+    end
+    return entries, conflict
+end
+
 """
     lca_assign(hits::DataFrame; min_agreement = 100, thresholds = DEFAULT_THRESHOLDS,
                top_delta = Inf, ignore_missing = true, valid_name = is_valid_name,
-               ranks = RANKS) -> DataFrame
+               ranks = RANKS, direction = :top_down) -> DataFrame
 
 Apply [`lca_path`](@ref) to every sequence of a hit table returned by
 [`bold_identify`](@ref).
@@ -179,11 +300,20 @@ One row per sequence, in order of first appearance, with columns `sequence`,
 (deepest assigned taxon), one column per rank with the assigned name and one
 `<rank>_agreement` column with the percent of pool hits supporting it.
 Unassigned ranks are `missing`; a sequence without hits has `n_hits = 0`.
+
+With `direction = :bottom_up` (see [`lca_path`](@ref)) two columns follow:
+`decision_rank`, the rank decided by its own pool (equal to `assigned_rank`,
+`missing` when nothing is assigned), and `lineage_conflict`, true when the
+supporting hits disagree or lack a valid name at a rank above it. For the
+ranks above the decision rank, `<rank>_agreement` is the percent of
+supporting hits carrying that name, not a share of the rank's pool. With the
+default `:top_down` the columns are exactly as in earlier versions.
 """
 function lca_assign(hits::AbstractDataFrame; min_agreement::Real = 100,
                     thresholds = DEFAULT_THRESHOLDS, top_delta::Real = Inf,
                     ignore_missing::Bool = true, valid_name = is_valid_name,
-                    ranks = RANKS)
+                    ranks = RANKS, direction = :top_down)
+    _check_direction(direction)
     ranks = _check_ranks(ranks)
     limits = _check_thresholds(thresholds, ranks)
     _check_lca_options(min_agreement, top_delta)
@@ -200,14 +330,24 @@ function lca_assign(hits::AbstractDataFrame; min_agreement::Real = 100,
     for r in ranks
         out[!, Symbol(r, :_agreement)] = Union{Missing,Float64}[]
     end
+    bottom_up = direction === :bottom_up
+    if bottom_up
+        out[!, :decision_rank] = Union{Missing,String}[]
+        out[!, :lineage_conflict] = Bool[]
+    end
     groups, order, repeated = _hit_groups(hits, ranks)
     repeated > 0 && @warn "Ignored $repeated repeated hit row(s) (same sequence, process ID and data)"
     for s in order
         idx = groups[s]
         sims = Float64[hits.similarity[i] for i in idx]
         lineages = [NamedTuple{ranks}(Tuple(hits[i, r] for r in ranks)) for i in idx]
-        path = _lca_path(sims, lineages, min_agreement, limits, top_delta, ignore_missing,
-                         valid_name, ranks)
+        path, conflict = if bottom_up
+            _lca_path_bottom_up(sims, lineages, min_agreement, limits, top_delta,
+                                ignore_missing, valid_name, ranks)
+        else
+            _lca_path(sims, lineages, min_agreement, limits, top_delta, ignore_missing,
+                      valid_name, ranks), false
+        end
         row = Dict{Symbol,Any}(:sequence => s, :n_hits => length(idx))
         if isempty(idx)
             row[:best_similarity] = missing
@@ -226,6 +366,10 @@ function lca_assign(hits::AbstractDataFrame; min_agreement::Real = 100,
         for p in path
             row[p.rank] = p.taxon
             row[Symbol(p.rank, :_agreement)] = p.agreement
+        end
+        if bottom_up
+            row[:decision_rank] = row[:assigned_rank]
+            row[:lineage_conflict] = conflict
         end
         push!(out, row)
     end
