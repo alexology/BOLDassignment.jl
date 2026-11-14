@@ -1,0 +1,5 @@
+boldigger3 3.0.2
+pandas 2.2.3
+numpy 2.3.2
+duckdb 1.3.2
+thresholds [97, 95, 90, 85, 75, 50]

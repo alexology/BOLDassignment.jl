@@ -1,0 +1,601 @@
+id	phylum	class	order	family	genus	species	pct_identity	status	records	records_ratio	selected_level	BIN	flags	top_ties
+seq1	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	10	0.625	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq2	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	private	1	1.0	genus	""	||||	1
+seq3	Arthropoda	Malacostraca	Amphipoda			Gammarus pulex	100.0	public	1	1.0	species	BOLD:ACX9999	|||4|	1
+seq4	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	3	0.25	species	BOLD:AAA0001	|2|||	1
+seq5	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	public	2	0.5	species	BOLD:AAA0001|BOLD:ACX9999	1|2|||5	1
+seq6	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	public	1	1.0	genus	""	||||	1
+seq7	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	1	1.0	species	""	|||4|	1
+seq8	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	99.5	private	2	0.4	species	BOLD:AAB1234|BOLD:AAA0001	1|2|||5	1
+seq9	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	public	1	1.0	species	""	1|||4|	1
+seq10	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	3	0.3	species	BOLD:ACX9999	|2|||	1
+seq11	Arthropoda	Insecta	Diptera		Chironomus	Chironomus riparius	97.0	public	1	0.5	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq12	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		100.0	private	2	0.5	genus	""	1|2|3||	1
+seq13	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	public	1	1.0	species	""	1||||	1
+seq14	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix		98.0	private	1	1.0	genus	""	||||	1
+seq15	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	private	4	0.3333333333333333	species	BOLD:AAB1234	|2|||	1
+seq16	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		97.0	public	2	0.3333333333333333	genus	""	|2|||	1
+seq17	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	98.0	public	1	0.3333333333333333	species	BOLD:ACX9999	|2||4|	3
+seq18	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	private	10	0.7142857142857143	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq19	Arthropoda		Diptera			Polypedilum nubeculosum	100.0	public	1	1.0	species	BOLD:AAA0001	1||||	1
+seq20	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		97.0	public	1	0.5	genus	""	|2|||	2
+seq21	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq22	Arthropoda	Insecta	Ephemeroptera				87.0	public	2	1.0	order	""	||||	1
+seq23	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	100.0	public	2	0.5	species	BOLD:ACX9999	1|2|||	1
+seq24	Arthropoda	Insecta	Diptera	Chironomidae		Polypedilum nubeculosum	100.0	public	2	0.3333333333333333	species	BOLD:AAA0001|BOLD:AAB1234	1|2|||5	2
+seq25	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		98.0	public	8	0.42105263157894735	genus	""	|2|||	1
+seq26	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	98.0	public	4	0.26666666666666666	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq27	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	3	0.375	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq28	Annelida	Clitellata	Haplotaxida	Naididae			90.0	public	1	1.0	family	""	1|||4|	1
+seq29	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	3	0.3	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq30	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	private	7	0.3684210526315789	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq31	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	100.0	public	1	1.0	species	BOLD:ACX9999	||||	1
+seq32	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	2	0.6666666666666666	species	BOLD:ACX9999	|2|||	1
+seq33	Arthropoda	Insecta	Diptera	Chironomidae		Polypedilum nubeculosum	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	1||||5	1
+seq34	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq35	Arthropoda						74.9	public	1	1.0	phylum	""	1|||4|	1
+seq36	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		96.99	private	2	0.6666666666666666	genus	""	1|2|||	1
+seq37	Arthropoda	Malacostraca	Amphipoda				89.9	public	2	1.0	order	""	||||	1
+seq38	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.0	public	3	0.3333333333333333	genus	""	|2|||	1
+seq39	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	98.0	public	3	0.2727272727272727	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq40	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		98.0	public	1	1.0	genus	""	||||	1
+seq41	Arthropoda	Malacostraca	Amphipoda		Gammarus	Gammarus pulex	100.0	public	2	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq42	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	8	0.5	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq43	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus fossarum	97.0	public	2	0.5	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq44	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	3	0.75	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq45	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.99	public	3	0.6	genus	""	|2|||	1
+seq46	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	4	0.4444444444444444	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq47	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq48	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq49	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	1	0.3333333333333333	species	BOLD:ACX9999	|2||4|	3
+seq50	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	1	0.3333333333333333	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	1|2|||5	3
+seq51	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	1	1.0	species	BOLD:AAA0001	1|||4|	1
+seq52	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	3	0.75	species	BOLD:AAA0001	|2|||	1
+seq53	Arthropoda	Insecta	Diptera	Chironomidae		Polypedilum nubeculosum	99.5	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	1||||5	1
+seq54	Arthropoda	Insecta			Simulium		96.0	private	1	0.3333333333333333	genus	""	|2|3|4|	3
+seq55	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	3	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	1|2|||5	1
+seq56	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	99.5	private	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	1||3||5	1
+seq57	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	7	0.4117647058823529	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq58	Annelida	Clitellata	Haplotaxida	Naididae			90.0	public	2	0.5	family	""	|2|||	1
+seq59	Arthropoda	Insecta	Diptera	Chironomidae		Chironomus riparius	99.5	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq60	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		98.0	public	1	1.0	genus	""	1||||	1
+seq61	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	private	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq62	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		97.0	private	2	1.0	genus	""	||||	1
+seq63		Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	1	0.5	species	BOLD:AAB1234|BOLD:ACX9999	1|2|||5	2
+seq64	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	99.5	public	4	0.5	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq65	Mollusca	Gastropoda		Lymnaeidae		Radix balthica	99.5	private	1	1.0	species	BOLD:AAA0001	1||3|4|	1
+seq66	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	6	0.5	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq67	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq68	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	2	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq69	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.99	public	13	0.6190476190476191	genus	""	|2|||	1
+seq70	Arthropoda	Malacostraca	Amphipoda	Gammaridae			92.0	public	4	0.4	family	""	|2|||	1
+seq71	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq72	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	97.0	public	7	0.7777777777777778	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq73	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	private	5	0.7142857142857143	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq74	Arthropoda		Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	1	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	3
+seq75	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	private	4	0.6666666666666666	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq76	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq77	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq78	Mollusca	Gastropoda	Hygrophila	Lymnaeidae		Radix balthica	100.0	private	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq79	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus pulex	99.5	public	1	1.0	species	BOLD:AAA0001	||||	1
+seq80	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix		95.0	public	1	1.0	genus	""	1||||	1
+seq81	Arthropoda	Malacostraca	Amphipoda		Gammarus	Gammarus pulex	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq82	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	private	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq83	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	4	0.6666666666666666	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq84	Arthropoda	Insecta	Ephemeroptera				85.0	public	4	0.6666666666666666	order	""	|2|||	1
+seq85	Arthropoda						60.0	public	1	1.0	phylum	""	1|||4|	1
+seq86	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		99.5	public	1	1.0	genus	""	||||	1
+seq87	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	2	0.5	species	BOLD:ACX9999	|2|||	1
+seq88	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	private	3	0.375	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq89	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	private	3	0.23076923076923078	species	BOLD:AAA0001	|2|||	2
+seq90	Arthropoda	Insecta	Ephemeroptera	Baetidae			92.0	private	2	0.6666666666666666	family	""	|2|||	1
+seq91	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	public	3	0.6	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq92	Arthropoda	Malacostraca	Amphipoda		Gammarus		95.0	public	1	1.0	genus	""	||||	1
+seq93	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq94	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	2	0.5	species	BOLD:ACX9999	|2|3||	1
+seq95	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	public	7	0.6363636363636364	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq96	Arthropoda	Insecta	Ephemeroptera		Baetis	Baetis rhodani	100.0	public	1	0.5	species	BOLD:AAA0001	1|2|||	2
+seq97	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	99.5	public	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq98	Arthropoda		Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	1	0.3333333333333333	species	BOLD:ACX9999	|2|||	3
+seq99	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	public	4	0.4	species	BOLD:AAB1234|BOLD:ACX9999	1|2|||5	1
+seq100	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	public	2	0.4	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq101	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	2	0.3333333333333333	species	BOLD:AAB1234	|2|||	2
+seq102	Arthropoda	Insecta	Ephemeroptera		Baetis	Baetis rhodani	97.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq103	Arthropoda	Malacostraca	Amphipoda				89.9	private	2	0.6666666666666666	order	""	1|2|3||	1
+seq104	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	3	0.3	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq105	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq106	Arthropoda			Gammaridae	Gammarus	Gammarus fossarum	100.0	public	1	0.2	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	5
+seq107	Arthropoda	Malacostraca		Gammaridae	Gammarus		96.99	public	1	1.0	genus	""	||||	1
+seq108	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	1	0.5	species	BOLD:ACX9999	|2||4|	2
+seq109	Arthropoda	Insecta	Diptera	Chironomidae			96.99	public	3	1.0	family	""	||||	1
+seq110	Arthropoda	Insecta	Ephemeroptera	Baetidae			94.99	public	4	0.4444444444444444	family	""	|2|||	1
+seq111	Mollusca	Gastropoda	Hygrophila			Radix balthica	100.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	1||||5	1
+seq112	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	private	2	0.5	genus	""	|2|||	1
+seq113	Arthropoda	Insecta	Diptera	Chironomidae			94.99	private	12	0.6666666666666666	family	""	|2|||	1
+seq114	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.99	public	3	0.6	genus	""	|2|||	1
+seq115	Arthropoda	Insecta	Diptera		Chironomus	Chironomus riparius	98.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq116	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	10	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq117	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	98.0	private	3	0.375	species	BOLD:AAB1234|BOLD:ACX9999	1|2|||5	1
+seq118	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq119	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus fossarum	100.0	public	1	0.5	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	2
+seq120	Arthropoda	Insecta	Ephemeroptera	Baetidae			96.0	public	2	0.2857142857142857	family	""	|2|||	2
+seq121	Arthropoda	Insecta	Diptera		Simulium	Simulium ornatum	100.0	private	1	0.5	species	BOLD:ACX9999	1|2|3|4|	2
+seq122	Annelida						50.0	public	1	1.0	phylum	""	1|||4|	1
+seq123	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	public	7	0.7777777777777778	genus	""	|2|||	1
+seq124	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	3	0.2727272727272727	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq125	Arthropoda	Insecta	Ephemeroptera		Cloeon	Cloeon dipterum	97.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq126	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	public	5	0.38461538461538464	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	1|2|||5	1
+seq127	Arthropoda	Insecta	Diptera	Chironomidae			92.0	private	3	0.75	family	""	|2|||	1
+seq128	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		96.99	public	1	1.0	genus	""	||||	1
+seq129	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	public	3	0.6	genus	""	1|2|||	1
+seq130	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq131	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	1	1.0	species	BOLD:AAB1234	|||4|	1
+seq132	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	public	1	0.3333333333333333	species	BOLD:AAA0001	|2||4|	3
+seq133	Arthropoda	Insecta	Ephemeroptera	Baetidae			92.0	private	2	0.4	family	""	|2|||	2
+seq134	Arthropoda	Insecta	Diptera				89.9	private	4	1.0	order	""	||||	1
+seq135	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	97.0	public	1	1.0	species	BOLD:AAA0001	|||4|	1
+seq136	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	public	3	0.23076923076923078	species	BOLD:AAA0001	|2|||	1
+seq137	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq138	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	private	1	1.0	species	BOLD:ACX9999	1||3|4|	1
+seq139	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	private	2	0.4	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq140	Arthropoda	Insecta	Diptera	Chironomidae			94.99	private	1	1.0	family	""	1||3|4|	1
+seq141	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	5	0.625	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq142	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.0	public	16	0.6666666666666666	genus	""	|2|||	1
+seq143	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq144	Arthropoda	Insecta	Ephemeroptera	Baetidae			94.99	private	1	1.0	family	""	||||	1
+seq145	Arthropoda	Insecta		Baetidae			94.99	public	1	1.0	family	""	|||4|	1
+seq146	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	public	1	1.0	species	BOLD:ACX9999	||||	1
+seq147	Arthropoda	Insecta	Diptera		Chironomus	Chironomus riparius	99.5	private	1	0.2	species	BOLD:ACX9999|BOLD:AAB1234	1|2|||5	5
+seq148	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	1	1.0	species	BOLD:ACX9999	1|||4|	1
+seq149	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	100.0	public	2	0.16666666666666666	species	BOLD:AAA0001	1|2|||	2
+seq150	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq151	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	2	0.4	species	BOLD:AAA0001	|2|||	1
+seq152	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	private	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq153	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix		96.0	public	1	0.3333333333333333	genus	""	|2||4|	3
+seq154	Arthropoda	Insecta	Ephemeroptera	Baetidae			92.0	private	1	0.5	family	""	1|2|3|4|	2
+seq155		Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq156	Arthropoda	Malacostraca	Amphipoda				89.9	public	1	1.0	order	""	1|||4|	1
+seq157	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	5	0.2631578947368421	species	BOLD:AAB1234|BOLD:ACX9999	1|2|||5	1
+seq158	Arthropoda	Insecta		Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	private	1	1.0	species	""	||3|4|	1
+seq159	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	3	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq160	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	private	3	0.25	species	BOLD:AAB1234	|2|||	1
+seq161	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	8	0.6666666666666666	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq162	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	8	0.6666666666666666	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq163	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	98.0	public	3	0.6	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq164	Arthropoda	Insecta		Baetidae	Baetis	Baetis vardarensis	100.0	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq165	Arthropoda	Insecta	Ephemeroptera		Baetis	Baetis vardarensis	97.0	public	1	0.5	species	""	|2||4|	2
+seq166	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	3	0.23076923076923078	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq167	Arthropoda	Malacostraca	Amphipoda				85.0	public	1	0.5	order	""	|2||4|	2
+seq168	Arthropoda	Insecta	Diptera		Simulium	Simulium ornatum	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq169	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	3	1.0	species	BOLD:AAA0001	||||	1
+seq170	Arthropoda	Insecta	Ephemeroptera	Baetidae			94.99	private	4	0.8	family	""	|2|||	1
+seq171	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	public	1	1.0	species	BOLD:AAB1234	1|||4|	1
+seq172	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		95.0	public	1	1.0	genus	""	1||||	1
+seq173	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	9	0.6	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq174	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq175	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	3	0.6	species	BOLD:AAA0001	|2|||	1
+seq176	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	private	4	0.4444444444444444	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq177	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	97.0	private	2	0.2857142857142857	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	3
+seq178	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	9	0.6923076923076923	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq179	Arthropoda	Malacostraca	Amphipoda		Gammarus	Gammarus pulex	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq180	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	8	0.5714285714285714	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq181	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	2	0.25	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq182	Arthropoda	Insecta	Diptera	Chironomidae			92.0	private	1	1.0	family	""	||||	1
+seq183	Arthropoda	Insecta	Diptera				85.0	private	2	1.0	order	""	||3||	1
+seq184		Malacostraca	Amphipoda		Gammarus	Gammarus fossarum	98.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq185	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	public	5	0.35714285714285715	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq186	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	98.0	public	5	0.4166666666666667	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq187	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	2	1.0	species	BOLD:ACX9999	||||	1
+seq188	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.0	public	3	0.5	genus	""	|2|||	1
+seq189	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq190	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	private	1	0.5	species	BOLD:AAB1234	|2|||	2
+seq191	Arthropoda	Insecta	Diptera	Simuliidae		Simulium ornatum	97.0	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq192	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	7	0.7	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq193	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	private	5	0.45454545454545453	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq194	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	1	0.3333333333333333	species	BOLD:AAB1234	1|2||4|	3
+seq195	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	private	5	0.38461538461538464	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq196	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	private	6	0.5	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq197	Arthropoda	Insecta			Baetis	Baetis vardarensis	97.0	public	1	0.5	species	""	|2||4|	2
+seq198	Arthropoda	Insecta	Diptera	Chironomidae		Chironomus riparius	100.0	public	2	1.0	species	BOLD:AAA0001|BOLD:AAB1234	1||||5	1
+seq199	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	3	0.3	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq200	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	private	6	0.4	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq201	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	8	0.5333333333333333	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	1|2|||5	1
+seq202	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	99.5	private	7	0.3888888888888889	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq203	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	97.0	public	2	0.3333333333333333	species	BOLD:AAA0001	|2|||	1
+seq204	Arthropoda	Insecta					84.99	public	1	1.0	class	""	1|||4|	1
+seq205	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	99.5	private	2	0.5	species	BOLD:ACX9999|BOLD:AAA0001	1|2|||5	2
+seq206	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	100.0	private	2	0.5	species	""	|2|3||	1
+seq207	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	1||||5	1
+seq208	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	1	1.0	species	BOLD:AAB1234	|||4|	1
+seq209	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		96.99	public	8	0.7272727272727273	genus	""	|2|||	1
+seq210	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		100.0	public	1	1.0	genus	""	||||	1
+seq211	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq212	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		95.0	public	2	0.6666666666666666	genus	""	|2|||	1
+seq213	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq214	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	3	0.375	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq215	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	private	9	0.5294117647058824	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq216	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		98.0	public	1	1.0	genus	""	1||||	1
+seq217	Arthropoda	Malacostraca	Amphipoda	Gammaridae			94.99	public	6	0.8571428571428571	family	""	|2|||	1
+seq218	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	private	5	0.7142857142857143	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq219	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	100.0	public	1	0.5	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	2
+seq220	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	public	2	0.2222222222222222	species	BOLD:ACX9999	|2|||	2
+seq221	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.0	public	4	0.3076923076923077	genus	""	|2|||	1
+seq222	Arthropoda	Insecta		Baetidae		Cloeon dipterum	97.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq223	Arthropoda		Ephemeroptera		Baetis		96.0	public	1	1.0	genus	""	||||	1
+seq224	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	private	6	0.5	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq225	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	98.0	private	1	1.0	species	BOLD:AAA0001	||||	1
+seq226	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	public	3	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq227	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	public	3	0.5	species	BOLD:AAB1234	1|2|||	1
+seq228	Arthropoda	Insecta	Diptera		Polypedilum	Polypedilum nubeculosum	99.5	public	1	0.3333333333333333	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	3
+seq229	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	public	1	0.3333333333333333	species	BOLD:AAB1234	|2||4|	3
+seq230	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	4	0.3333333333333333	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq231	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		95.0	public	1	1.0	genus	""	|||4|	1
+seq232	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq233	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus fossarum	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq234	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq235	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	private	2	0.4	species	BOLD:AAA0001|BOLD:AAB1234	|2|3||5	1
+seq236	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus fossarum	99.5	private	3	0.3	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq237	Arthropoda	Insecta	Diptera		Chironomus	Chironomus riparius	100.0	private	1	0.5	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	2
+seq238	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	1	1.0	species	BOLD:ACX9999	||||	1
+seq239	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	98.0	public	1	0.25	species	""	|2||4|	4
+seq240	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.0	private	1	1.0	genus	""	||||	1
+seq241	Arthropoda	Insecta		Simuliidae	Simulium		95.0	public	1	0.25	genus	""	|2|||	4
+seq242	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	6	0.375	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq243	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	97.0	public	5	0.5555555555555556	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq244	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	private	5	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq245	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	2	0.6666666666666666	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq246	Arthropoda		Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234	1|2|||5	2
+seq247	Arthropoda	Insecta	Diptera	Simuliidae			95.0	private	2	0.3333333333333333	family	""	|2|3||	2
+seq248		Clitellata	Haplotaxida		Tubifex	Tubifex tubifex	98.0	public	1	0.5	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq249	Arthropoda	Insecta	Diptera				89.9	public	1	1.0	order	""	1|||4|	1
+seq250	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	public	4	0.25	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq251	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	3	0.3333333333333333	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq252		Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	0.5	species	BOLD:ACX9999	|2||4|	2
+seq253	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	100.0	private	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq254	Arthropoda	Malacostraca		Gammaridae	Gammarus	Gammarus fossarum	97.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq255	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	97.0	public	3	1.0	species	BOLD:AAA0001|BOLD:AAB1234	1||||5	1
+seq256	Annelida	Clitellata			Tubifex		96.0	public	1	1.0	genus	""	||||	1
+seq257	Arthropoda	Insecta	Diptera	Chironomidae			94.99	public	1	1.0	family	""	|||4|	1
+seq258	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus		96.99	private	2	0.6666666666666666	genus	""	|2|||	1
+seq259	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	private	9	0.6428571428571429	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq260	Arthropoda	Insecta	Ephemeroptera		Baetis		96.99	public	1	0.5	genus	""	|2|||	2
+seq261	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq262	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	1	1.0	species	BOLD:AAA0001	||||	1
+seq263	Arthropoda	Insecta	Ephemeroptera	Baetidae			90.0	private	1	1.0	family	""	||||	1
+seq264	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	4	0.4444444444444444	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq265	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	4	0.36363636363636365	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq266	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq267			Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq268	Arthropoda	Insecta	Ephemeroptera	Baetidae			96.99	public	4	0.8	family	""	|2|||	1
+seq269	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq270	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		95.0	public	6	0.5	genus	""	|2|||	1
+seq271	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq272	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	2	0.4	species	BOLD:AAB1234	|2|||	1
+seq273	Annelida	Clitellata	Haplotaxida	Naididae			96.0	public	9	0.6428571428571429	family	""	|2|||	1
+seq274	Arthropoda		Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	private	1	1.0	species	BOLD:AAA0001	1||||	1
+seq275	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.0	private	2	1.0	genus	""	||3||	1
+seq276	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	98.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq277	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq278	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.99	public	2	0.5	genus	""	|2|||	1
+seq279		Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	1	0.5	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq280	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	private	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq281	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	public	1	0.3333333333333333	species	BOLD:ACX9999	|2|||	3
+seq282	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	public	2	1.0	species	BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq283	Mollusca		Hygrophila				85.0	private	1	1.0	order	""	1||3|4|	1
+seq284	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	private	2	0.18181818181818182	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	3
+seq285	Arthropoda	Insecta	Ephemeroptera		Baetis		96.99	public	1	1.0	genus	""	||||	1
+seq286	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	2	0.25	species	BOLD:AAA0001	|2|||	1
+seq287	Arthropoda		Amphipoda	Gammaridae			95.0	private	1	1.0	family	""	1||3|4|	1
+seq288	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	private	6	0.5	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq289	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq290	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.0	public	1	1.0	genus	""	||||	1
+seq291	Arthropoda	Insecta	Ephemeroptera		Cloeon		96.0	private	1	0.5	genus	""	|2|||	2
+seq292	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	public	8	0.5714285714285714	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq293	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus		96.0	private	7	0.7777777777777778	genus	""	|2|||	1
+seq294	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	private	2	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	1||||5	1
+seq295	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	6	0.6666666666666666	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq296	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq297	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	1	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	3
+seq298	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	100.0	private	3	0.3	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq299	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	private	1	1.0	genus	""	||||	1
+seq300	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq301	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	5	0.3333333333333333	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq302	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	1	0.5	species	BOLD:AAA0001	1|2|3|4|	2
+seq303	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	private	2	1.0	genus	""	||||	1
+seq304	Arthropoda	Insecta	Diptera		Polypedilum	Polypedilum nubeculosum	100.0	public	1	0.3333333333333333	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	3
+seq305	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	1	1.0	species	BOLD:ACX9999	1|||4|	1
+seq306	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	3	0.42857142857142855	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq307	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus		98.0	public	1	1.0	genus	""	||||	1
+seq308	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq309	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix		96.0	public	1	1.0	genus	""	||||	1
+seq310	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	public	2	1.0	genus	""	||||	1
+seq311	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	98.0	public	3	0.375	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq312	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	public	4	0.6666666666666666	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq313	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	4	0.3076923076923077	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq314	Mollusca	Gastropoda	Hygrophila	Lymnaeidae			94.99	public	1	1.0	family	""	1||||	1
+seq315	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	3
+seq316	Arthropoda	Insecta	Diptera		Chironomus	Chironomus riparius	97.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq317	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	1	1.0	species	BOLD:AAA0001	||||	1
+seq318	Arthropoda	Insecta	Diptera			Polypedilum nubeculosum	99.5	private	1	0.25	species	BOLD:AAA0001|BOLD:AAB1234	1|2|||5	4
+seq319	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix		97.0	private	1	1.0	genus	""	||||	1
+seq320	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	97.0	public	4	0.26666666666666666	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq321	Arthropoda	Insecta	Ephemeroptera	Baetidae			90.0	private	2	0.6666666666666666	family	""	|2|||	1
+seq322	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	private	4	0.26666666666666666	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq323	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	private	2	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq324	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.0	public	1	1.0	genus	""	1|||4|	1
+seq325	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	private	2	0.25	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	2
+seq326	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	public	1	0.5	species	BOLD:ACX9999	|2|||	2
+seq327	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	private	1	1.0	species	BOLD:AAB1234	1||3||	1
+seq328	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	public	1	0.5	species	BOLD:AAA0001	|2||4|	2
+seq329	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	99.5	public	6	0.42857142857142855	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq330	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	private	4	0.36363636363636365	genus	""	|2|||	1
+seq331	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	public	1	0.25	species	BOLD:ACX9999	|2||4|	4
+seq332	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	1	1.0	species	BOLD:ACX9999	1|||4|	1
+seq333	Mollusca	Gastropoda	Hygrophila				94.99	private	1	1.0	order	""	||3|4|	1
+seq334	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	2	0.5	species	BOLD:ACX9999|BOLD:AAA0001	1|2|||5	1
+seq335	Arthropoda	Insecta	Diptera		Simulium	Simulium ornatum	100.0	private	1	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	3
+seq336	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq337	Arthropoda	Insecta		Chironomidae		Chironomus riparius	98.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq338	Arthropoda	Insecta	Diptera	Chironomidae			94.99	public	2	1.0	family	""	||||	1
+seq339	Arthropoda	Insecta		Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	3	0.42857142857142855	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq340	Arthropoda		Diptera		Polypedilum	Polypedilum nubeculosum	100.0	private	1	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	3
+seq341	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	public	1	1.0	species	BOLD:ACX9999	|||4|	1
+seq342	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.0	public	2	0.6666666666666666	genus	""	|2|||	1
+seq343	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	2	0.6666666666666666	species	BOLD:AAB1234|BOLD:AAA0001	1|2|||5	1
+seq344	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.0	private	1	1.0	genus	""	||||	1
+seq345	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	private	1	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAB1234	1|2|||5	3
+seq346	Mollusca	Gastropoda	Hygrophila	Lymnaeidae		Radix balthica	99.5	public	1	1.0	species	BOLD:AAA0001	1|||4|	1
+seq347	Mollusca	Gastropoda		Lymnaeidae			92.0	public	1	1.0	family	""	|||4|	1
+seq348	Arthropoda	Insecta		Simuliidae	Simulium	Simulium ornatum	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq349	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		95.0	public	1	1.0	genus	""	1||||	1
+seq350	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	97.0	public	2	0.6666666666666666	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq351	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	private	3	0.23076923076923078	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq352	Arthropoda	Insecta	Diptera	Simuliidae			94.99	public	4	0.6666666666666666	family	""	|2|||	1
+seq353	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		95.0	public	1	1.0	genus	""	||||	1
+seq354	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	100.0	private	8	0.7272727272727273	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq355	Arthropoda	Insecta	Ephemeroptera			Baetis rhodani	100.0	public	1	0.3333333333333333	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	3
+seq356		Insecta	Diptera	Simuliidae	Simulium		98.0	public	1	0.3333333333333333	genus	""	|2||4|	3
+seq357	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq358	Annelida	Clitellata	Haplotaxida		Tubifex	Tubifex tubifex	100.0	private	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234	1||3||5	1
+seq359	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	2	1.0	species	BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq360	Arthropoda	Insecta			Baetis		100.0	private	1	0.3333333333333333	genus	""	|2|||	3
+seq361	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq362	Mollusca	Gastropoda	Hygrophila	Lymnaeidae		Radix balthica	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq363	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	4	0.5	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq364	Mollusca	Gastropoda	Hygrophila	Lymnaeidae			90.0	public	6	1.0	family	""	||||	1
+seq365	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	98.0	public	1	0.125	species	BOLD:AAB1234	|2|||	8
+seq366	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	3	0.2727272727272727	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq367	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		96.0	public	6	1.0	genus	""	||||	1
+seq368	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		96.0	public	7	1.0	genus	""	||||	1
+seq369	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		95.0	private	4	0.8	genus	""	|2|||	1
+seq370	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		95.0	private	5	0.8333333333333334	genus	""	|2|||	1
+seq371	Arthropoda	Insecta	Ephemeroptera	Baetidae			90.0	public	1	1.0	family	""	||||	1
+seq372	Mollusca	Gastropoda	Hygrophila			Radix balthica	100.0	private	1	0.5	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq373	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	1||||5	1
+seq374	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		96.0	private	2	0.5	genus	""	|2|||	1
+seq375	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	private	1	1.0	species	BOLD:AAA0001	||||	1
+seq376	Arthropoda		Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	97.0	public	1	0.25	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	4
+seq377	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	private	1	0.5	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	2
+seq378	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	97.0	public	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq379	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	98.0	public	1	1.0	species	BOLD:ACX9999	||||	1
+seq380	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	private	2	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq381	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		100.0	private	6	0.42857142857142855	genus	""	|2|||	1
+seq382	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq383	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	97.0	public	3	0.21428571428571427	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	2
+seq384	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	99.5	public	6	0.5454545454545454	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq385	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	1	0.3333333333333333	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	3
+seq386	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	99.5	private	1	0.3333333333333333	species	BOLD:ACX9999	|2|3|4|	3
+seq387	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.0	public	1	1.0	genus	""	1|||4|	1
+seq388	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	private	1	1.0	species	BOLD:AAB1234	||||	1
+seq389	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	public	2	1.0	genus	""	||||	1
+seq390	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		100.0	public	4	0.3076923076923077	genus	""	|2|||	1
+seq391	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	3	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq392	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq393	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	97.0	private	6	0.46153846153846156	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq394	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	private	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq395	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	private	11	0.5789473684210527	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq396	Arthropoda	Insecta	Diptera	Chironomidae		Polypedilum nubeculosum	100.0	public	2	0.25	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq397	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq398	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	4	0.5	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq399	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	private	2	0.6666666666666666	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq400	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	6	0.75	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq401	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq402	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	99.5	private	5	0.7142857142857143	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq403	Arthropoda	Insecta	Diptera	Chironomidae		Polypedilum nubeculosum	99.5	public	1	0.5	species	BOLD:AAA0001	1|2||4|	2
+seq404	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq405	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	public	2	0.4	species	BOLD:AAA0001|BOLD:ACX9999	1|2|||5	2
+seq406	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	private	6	0.46153846153846156	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq407	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	98.0	public	4	0.4	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq408	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq409	Mollusca	Gastropoda	Hygrophila	Lymnaeidae		Radix balthica	97.0	private	1	1.0	species	BOLD:AAB1234	||||	1
+seq410	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		97.0	private	1	1.0	genus	""	1||3|4|	1
+seq411	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	private	1	1.0	species	BOLD:ACX9999	1||3|4|	1
+seq412	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq413	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	97.0	public	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq414	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq415	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	private	5	0.3125	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq416	Arthropoda		Diptera			Chironomus riparius	97.0	public	1	1.0	species	BOLD:AAB1234	1|||4|	1
+seq417	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	public	2	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq418	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq419	Arthropoda	Insecta		Baetidae	Baetis		100.0	public	1	0.5	genus	""	|2|||	2
+seq420	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.0	public	5	0.5	genus	""	|2|||	1
+seq421	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	private	11	0.6470588235294118	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq422	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	public	2	1.0	genus	""	||||	1
+seq423	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq424	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	99.5	public	1	0.3333333333333333	species	""	|2||4|	3
+seq425	Arthropoda	Insecta	Ephemeroptera	Baetidae			92.0	public	8	0.5714285714285714	family	""	|2|||	1
+seq426	Arthropoda	Insecta				Baetis vardarensis	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq427	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq428	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis vardarensis	100.0	public	3	0.23076923076923078	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq429	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus		95.0	public	4	0.6666666666666666	genus	""	|2|||	1
+seq430	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	public	6	0.5	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq431	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	97.0	public	3	0.75	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq432	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		98.0	public	1	0.5	genus	""	|2|||	2
+seq433	Arthropoda	Malacostraca		Gammaridae			92.0	public	1	1.0	family	""	||||	1
+seq434	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	99.5	private	1	0.3333333333333333	species	BOLD:AAA0001	|2|3||	3
+seq435	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq436	Arthropoda	Insecta	Diptera	Chironomidae			92.0	public	3	0.75	family	""	1|2|||	1
+seq437	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	100.0	public	9	0.6428571428571429	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq438	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis vardarensis	98.0	public	2	1.0	species	BOLD:ACX9999	||||	1
+seq439	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	3	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq440	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis vardarensis	100.0	private	1	0.5	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq441	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	97.0	private	3	0.25	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	3
+seq442	Mollusca	Gastropoda	Hygrophila		Radix	Radix balthica	100.0	public	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq443	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	public	2	0.4	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq444	Arthropoda	Insecta		Simuliidae	Simulium		96.99	public	1	0.5	genus	""	|2||4|	2
+seq445	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.99	private	3	0.42857142857142855	genus	""	|2|||	1
+seq446	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	97.0	private	8	0.7272727272727273	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq447	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	private	4	0.8	species	BOLD:AAA0001|BOLD:ACX9999	1|2|||5	1
+seq448	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	3	0.21428571428571427	species	""	1|2|||	3
+seq449	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	private	1	1.0	genus	""	||||	1
+seq450	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq451	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	99.5	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq452	Annelida	Clitellata	Haplotaxida		Tubifex		96.99	public	1	0.25	genus	""	1|2|||	4
+seq453	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq454	Arthropoda	Malacostraca		Gammaridae	Gammarus	Gammarus fossarum	98.0	private	1	1.0	species	BOLD:ACX9999	||||	1
+seq455	Arthropoda	Insecta	Ephemeroptera		Baetis		96.99	public	1	1.0	genus	""	||||	1
+seq456	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	97.0	public	1	0.5	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	2
+seq457	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	97.0	public	6	0.35294117647058826	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq458	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.0	public	7	0.7777777777777778	genus	""	|2|||	1
+seq459	Annelida	Clitellata	Haplotaxida		Tubifex		95.0	public	1	1.0	genus	""	1||||	1
+seq460	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	2	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq461	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		95.0	public	9	0.6	genus	""	|2|||	1
+seq462	Arthropoda	Insecta	Diptera		Polypedilum	Polypedilum nubeculosum	100.0	public	2	0.25	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq463	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	private	4	0.4444444444444444	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq464	Arthropoda	Insecta	Ephemeroptera	Baetidae			92.0	public	6	1.0	family	""	||||	1
+seq465	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	1	1.0	species	BOLD:AAB1234	||||	1
+seq466	Arthropoda	Insecta		Simuliidae	Simulium	Simulium ornatum	100.0	public	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq467	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	1	1.0	species	BOLD:ACX9999	|||4|	1
+seq468	Arthropoda		Diptera		Simulium	Simulium ornatum	98.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq469	Annelida	Clitellata	Haplotaxida		Tubifex	Tubifex tubifex	99.5	public	1	0.5	species	BOLD:ACX9999	|2|||	2
+seq470	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	100.0	public	1	1.0	species	BOLD:ACX9999	1|||4|	1
+seq471	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	private	1	1.0	species	BOLD:ACX9999	1||3|4|	1
+seq472	Arthropoda	Insecta		Chironomidae	Chironomus	Chironomus riparius	100.0	public	3	0.25	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	3
+seq473	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	100.0	public	9	0.75	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq474	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	100.0	private	1	0.5	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	2
+seq475	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	private	9	0.6428571428571429	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq476	Arthropoda	Insecta	Ephemeroptera		Baetis		98.0	public	1	0.5	genus	""	|2|||	2
+seq477	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	1	1.0	species	BOLD:ACX9999	||||	1
+seq478	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	5	0.7142857142857143	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq479	Arthropoda		Ephemeroptera			Baetis vardarensis	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq480	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	public	2	0.6666666666666666	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq481	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	2	0.6666666666666666	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq482	Mollusca	Gastropoda	Hygrophila	Lymnaeidae			94.99	public	1	1.0	family	""	||||	1
+seq483	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon		98.0	public	2	0.6666666666666666	genus	""	1|2|||	1
+seq484	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.99	public	1	1.0	genus	""	||||	1
+seq485	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	99.5	public	4	0.36363636363636365	species	BOLD:AAB1234	|2|||	1
+seq486	Arthropoda		Ephemeroptera	Baetidae		Baetis rhodani	100.0	private	1	0.3333333333333333	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	3
+seq487	Mollusca	Gastropoda	Hygrophila	Lymnaeidae		Radix balthica	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	1||||5	1
+seq488	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus		95.0	public	1	1.0	genus	""	||||	1
+seq489	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	private	6	0.46153846153846156	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq490	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	97.0	public	5	0.7142857142857143	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq491	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	private	3	0.375	species	BOLD:ACX9999|BOLD:AAB1234	|2|3||5	1
+seq492	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq493	Arthropoda	Insecta	Diptera	Chironomidae			94.99	private	5	0.625	family	""	|2|||	1
+seq494	Arthropoda	Malacostraca	Amphipoda	Gammaridae			94.99	private	1	0.5	family	""	|2|||	2
+seq495	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	private	1	1.0	species	BOLD:AAB1234	||3||	1
+seq496	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq497	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.99	public	4	0.4	genus	""	1|2|||	1
+seq498	Arthropoda	Insecta	Ephemeroptera				89.9	public	2	1.0	order	""	||||	1
+seq499	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus fossarum	99.5	public	1	0.3333333333333333	species	""	1|2||4|	3
+seq500	Arthropoda	Malacostraca		Gammaridae	Gammarus	Gammarus fossarum	97.0	private	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq501	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	private	3	0.5	species	BOLD:ACX9999|BOLD:AAB1234	1|2|||5	1
+seq502	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.0	public	3	0.75	genus	""	|2|||	1
+seq503	Arthropoda	Insecta					75.0	private	8	1.0	class	""	||||	1
+seq504	Arthropoda	Malacostraca	Amphipoda		Gammarus		96.0	private	1	0.3333333333333333	genus	""	|2|||	3
+seq505	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	private	5	0.45454545454545453	species	BOLD:AAA0001	|2|||	1
+seq506	Arthropoda	Malacostraca	Amphipoda	Gammaridae		Gammarus pulex	100.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq507	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	public	3	0.42857142857142855	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	1
+seq508	Arthropoda	Insecta	Ephemeroptera		Baetis	Baetis rhodani	97.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq509	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	7	0.6363636363636364	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq510	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	98.0	public	1	0.5	species	BOLD:ACX9999	|2||4|	2
+seq511	Annelida	Clitellata	Haplotaxida	Naididae		Tubifex tubifex	99.5	private	1	0.5	species	""	|2|3|4|	2
+seq512	Arthropoda	Insecta	Diptera		Simulium		98.0	private	3	0.42857142857142855	genus	""	|2|||	1
+seq513	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.99	public	2	1.0	genus	""	||||	1
+seq514	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	97.0	private	3	0.17647058823529413	species	BOLD:AAA0001|BOLD:AAB1234	|2|3||5	1
+seq515	Arthropoda		Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	1	0.3333333333333333	species	BOLD:AAB1234	|2|||	3
+seq516	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	0.16666666666666666	species	BOLD:AAB1234	1|2|||	6
+seq517	Arthropoda		Ephemeroptera	Baetidae	Cloeon		98.0	public	1	1.0	genus	""	||||	1
+seq518	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	public	5	0.5555555555555556	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq519	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	private	1	0.5	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq520	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	100.0	public	2	0.4	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq521	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	99.5	private	2	0.6666666666666666	species	BOLD:ACX9999|BOLD:AAA0001	1|2|||5	1
+seq522	Arthropoda	Malacostraca			Gammarus	Gammarus fossarum	99.5	public	1	0.5	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq523	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	98.0	public	2	0.6666666666666666	species	BOLD:AAB1234	1|2|||	1
+seq524	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	100.0	public	2	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq525	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	public	2	0.5	genus	""	|2|||	1
+seq526	Arthropoda	Insecta	Diptera	Simuliidae		Simulium ornatum	98.0	public	2	0.4	species	BOLD:AAA0001	|2|||	2
+seq527	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	1	1.0	species	BOLD:AAA0001	||||	1
+seq528	Arthropoda	Insecta	Ephemeroptera				89.9	public	2	1.0	order	""	||||	1
+seq529	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	97.0	private	6	0.6	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq530	Arthropoda	Insecta	Ephemeroptera	Baetidae		Cloeon dipterum	100.0	public	2	0.5	species	BOLD:ACX9999	|2|||	1
+seq531	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus		96.99	public	2	0.5	genus	""	1|2|||	1
+seq532	Arthropoda	Insecta		Baetidae	Cloeon		100.0	private	1	0.3333333333333333	genus	""	|2|||	3
+seq533	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq534	Mollusca	Gastropoda	Hygrophila		Radix	Radix balthica	97.0	public	1	0.5	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	1|2|||5	2
+seq535	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	1	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq536	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	100.0	public	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234|BOLD:ACX9999	||||5	1
+seq537	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	private	1	0.3333333333333333	species	BOLD:AAB1234	|2|||	3
+seq538	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	private	2	0.4	species	BOLD:ACX9999	1|2|3||	2
+seq539	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	100.0	private	1	0.5	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	|2|||5	2
+seq540	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	2	0.25	species	BOLD:ACX9999	|2|||	3
+seq541	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.0	private	2	0.6666666666666666	genus	""	1|2|||	1
+seq542	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	98.0	public	1	1.0	species	BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq543	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	1	1.0	species	BOLD:ACX9999	|||4|	1
+seq544	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	5	0.3125	species	BOLD:AAB1234|BOLD:AAA0001	1|2|||5	2
+seq545	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	97.0	public	6	0.42857142857142855	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq546	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	public	3	0.3	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq547	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	98.0	private	1	0.3333333333333333	species	""	|2|3|4|	3
+seq548	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.99	public	5	0.2777777777777778	genus	""	|2|||	1
+seq549	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.99	public	1	0.5	genus	""	1|2|||	2
+seq550	Arthropoda	Malacostraca	Amphipoda		Gammarus	Gammarus pulex	98.0	public	1	1.0	species	BOLD:ACX9999	|||4|	1
+seq551	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	100.0	public	3	0.42857142857142855	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq552	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	97.0	private	4	0.6666666666666666	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq553	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		98.0	private	2	1.0	genus	""	||||	1
+seq554	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	100.0	private	3	0.5	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	1|2|||5	1
+seq555	Mollusca						84.99	public	1	1.0	phylum	""	|||4|	1
+seq556	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	public	2	0.6666666666666666	species	BOLD:AAB1234|BOLD:ACX9999	|2|||5	1
+seq557	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	public	5	0.45454545454545453	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq558	Mollusca	Gastropoda					75.0	private	1	0.5	class	""	|2|3|4|	2
+seq559	Annelida	Clitellata		Naididae			90.0	public	1	0.5	family	""	|2||4|	2
+seq560	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	99.5	private	1	1.0	species	""	||3|4|	1
+seq561	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	5	0.625	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	|2|||5	1
+seq562	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis vardarensis	98.0	public	2	1.0	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	||||5	1
+seq563	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq564	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus pulex	99.5	public	3	0.3	species	BOLD:ACX9999|BOLD:AAB1234	|2|||5	2
+seq565	Arthropoda	Insecta	Diptera	Simuliidae		Simulium ornatum	97.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001	1||||5	1
+seq566	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	public	2	1.0	species	BOLD:ACX9999|BOLD:AAB1234|BOLD:AAA0001	||||5	1
+seq567	Arthropoda	Insecta		Chironomidae	Chironomus	Chironomus riparius	99.5	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq568	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		96.99	private	2	0.4	genus	""	|2|||	1
+seq569	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	98.0	public	4	0.5714285714285714	species	BOLD:ACX9999|BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq570	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	99.5	public	1	1.0	species	BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq571	Arthropoda	Insecta	Diptera	Simuliidae	Simulium		95.0	public	1	1.0	genus	""	1||||	1
+seq572	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	98.0	public	2	0.2857142857142857	species	BOLD:AAB1234|BOLD:AAA0001	|2|||5	1
+seq573	Arthropoda	Insecta	Ephemeroptera	Baetidae			98.0	private	1	1.0	family	""	||||	1
+seq574	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis		99.5	public	4	0.6666666666666666	genus	""	|2|||	1
+seq575	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex	Tubifex tubifex	98.0	private	1	1.0	species	BOLD:AAB1234|BOLD:AAA0001|BOLD:ACX9999	||||5	1
+seq576	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis rhodani	98.0	public	3	0.42857142857142855	species	BOLD:AAA0001	|2|||	1
+seq577	Annelida	Clitellata	Haplotaxida	Naididae	Tubifex		96.0	public	1	0.5	genus	""	|2|||	2
+seq578	Arthropoda	Insecta	Ephemeroptera	Baetidae		Baetis vardarensis	99.5	public	1	0.5	species	BOLD:AAA0001|BOLD:ACX9999	|2|||5	2
+seq579	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	100.0	public	3	0.75	species	BOLD:AAA0001|BOLD:AAB1234	|2|||5	1
+seq580	Mollusca	Gastropoda		Lymnaeidae	Radix		100.0	private	1	1.0	genus	""	||||	1
+seq581	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum		96.0	public	6	0.6	genus	""	|2|||	1
+seq582	Arthropoda	Insecta	Diptera	Simuliidae		Simulium ornatum	99.5	public	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	2
+seq583	Arthropoda	Insecta	Diptera	Chironomidae	Chironomus	Chironomus riparius	97.0	private	1	1.0	species	BOLD:AAA0001|BOLD:AAB1234	||||5	1
+seq584	Mollusca	Gastropoda	Hygrophila	Lymnaeidae	Radix	Radix balthica	97.0	public	1	0.3333333333333333	species	BOLD:AAB1234	|2|||	3
+seq585	Arthropoda	Insecta	Diptera		Polypedilum	Polypedilum nubeculosum	98.0	public	1	0.25	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	4
+seq586	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	98.0	public	2	0.4	species	BOLD:ACX9999	|2|||	1
+seq587	Arthropoda	Malacostraca	Amphipoda	Gammaridae	Gammarus	Gammarus fossarum	98.0	public	2	0.2857142857142857	species	BOLD:ACX9999|BOLD:AAB1234	1|2|||5	1
+seq588	Arthropoda	Insecta	Ephemeroptera	Baetidae	Cloeon	Cloeon dipterum	99.5	public	4	0.5714285714285714	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq589	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	100.0	public	1	0.5	species	BOLD:AAA0001	|2|||	2
+seq590	Annelida	Clitellata		Naididae			100.0	private	1	1.0	family	""	||3|4|	1
+seq591	Arthropoda	Insecta	Diptera	Chironomidae			96.99	public	6	0.8571428571428571	family	""	|2|||	1
+seq592	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	public	1	0.5	species	BOLD:AAB1234	|2|||	2
+seq593	Arthropoda	Insecta	Ephemeroptera	Baetidae	Baetis	Baetis rhodani	99.5	private	1	0.2	species	BOLD:ACX9999	1|2|3|4|	5
+seq594	Arthropoda		Diptera	Chironomidae	Chironomus	Chironomus riparius	99.5	private	1	0.5	species	BOLD:ACX9999|BOLD:AAA0001	|2|||5	2
+seq595	Annelida	Clitellata	Haplotaxida	Naididae			94.99	public	2	0.5	family	""	|2|||	1
+seq596	no-match	no-match	no-match	no-match	no-match	no-match	0.0		0				||||	0
+seq597	Arthropoda	Insecta	Diptera	Simuliidae		Simulium ornatum	98.0	public	1	0.5	species	BOLD:ACX9999	|2||4|	2
+seq598	Arthropoda	Insecta	Diptera	Chironomidae	Polypedilum	Polypedilum nubeculosum	99.5	private	3	0.3	species	BOLD:AAB1234|BOLD:ACX9999|BOLD:AAA0001	|2|||5	1
+seq599	Arthropoda	Insecta	Diptera	Simuliidae	Simulium	Simulium ornatum	99.5	public	1	1.0	species	BOLD:AAA0001|BOLD:ACX9999|BOLD:AAB1234	||||5	1
+seq600	Arthropoda	Malacostraca	Amphipoda		Gammarus	Gammarus pulex	98.0	public	1	1.0	species	BOLD:AAB1234	1|||4|	1

@@ -422,6 +422,7 @@ catalog() = Dict{String,Vector{Any}}(
     end
 
     include("test_bottom_up.jl")
+    include("test_boldigger3.jl")
 
     if get(ENV, "BOLDASSIGNMENT_LIVE", "") == "1"
         @testset "Live BOLD request" begin

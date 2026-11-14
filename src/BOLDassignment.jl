@@ -21,7 +21,7 @@ using SHA
 
 export IDEngine, BOLD_DATABASES, BOLD_MODES, DEFAULT_THRESHOLDS, RANKS,
        bold_identify, lca_assign, lca_path, is_valid_name, bold_assign, bold_records,
-       normalize_sequence
+       normalize_sequence, boldigger3_select, boldigger3_hits, boldigger3_name, BOLDIGGER3_THRESHOLDS
 
 include("constants.jl")
 include("sequences.jl")
@@ -30,5 +30,6 @@ include("identify.jl")
 include("lca.jl")
 include("assign.jl")
 include("portal.jl")
+include("boldigger3.jl")
 
 end
