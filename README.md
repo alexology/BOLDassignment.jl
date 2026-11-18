@@ -1,5 +1,7 @@
 # BOLDassignment.jl
 
+[![Docs](https://img.shields.io/badge/docs-dev-blue.svg)](https://alexology.github.io/BOLDassignment.jl/dev/)
+
 Taxonomic assignment of amplicon sequence variants (ASVs) against the
 [BOLD v5 identification engine](https://id.boldsystems.org), with a lowest
 common ancestor (LCA) that accepts a minimum agreement percentage.
@@ -18,7 +20,7 @@ The package uses the documented Barcode ID API
 Record metadata (BCDM fields) come from the portal API
 (`https://portal.boldsystems.org/openapi.json`).
 
-## Install from GitHub
+## Installation
 
 This package is not registered in the Julia General registry. Install it
 from GitHub:
@@ -27,6 +29,11 @@ from GitHub:
 using Pkg
 Pkg.add(url="https://github.com/alexology/BOLDassignment.jl")
 ```
+
+The development versions published on GitHub were numbered 0.1.1–0.1.3;
+the numbering restarts at 0.1.0 for the first registration (the General
+registry accepts only 0.0.1, 0.1.0 or 1.0.0 as a first version). The
+functionality is unchanged.
 
 ## Usage
 
